@@ -1,0 +1,251 @@
+name,team,country,role,capped,base_lakh,marquee,bowling
+Ruturaj Gaikwad,CSK,India,BAT,Y,200,Y,
+Ayush Mhatre,CSK,India,BAT,N,30,,
+Dewald Brevis,CSK,South Africa,BAT,Y,150,,spin
+MS Dhoni,CSK,India,WK,Y,200,Y,
+Urvil Patel,CSK,India,WK,N,30,,
+Shivam Dube,CSK,India,AR,Y,200,,pace
+Jamie Overton,CSK,England,AR,Y,150,,pace
+Ramakrishna Ghosh,CSK,India,AR,N,30,,pace
+Noor Ahmad,CSK,Afghanistan,BWL,Y,200,,spin
+Khaleel Ahmed,CSK,India,BWL,Y,200,,pace
+Anshul Kamboj,CSK,India,BWL,Y,75,,pace
+Gurjapneet Singh,CSK,India,BWL,N,30,,pace
+Nathan Ellis,CSK,Australia,BWL,Y,200,,pace
+Shreyas Gopal,CSK,India,BWL,N,30,,spin
+Mukesh Choudhary,CSK,India,BWL,N,30,,pace
+Sanju Samson,CSK,India,WK,Y,200,Y,
+Akeal Hosein,CSK,West Indies,BWL,Y,200,,spin
+Prashant Veer,CSK,India,AR,N,30,,spin
+Kartik Sharma,CSK,India,WK,N,30,,
+Matthew Short,CSK,Australia,AR,Y,150,,spin
+Aman Khan,CSK,India,AR,N,30,,pace
+Sarfaraz Khan,CSK,India,BAT,Y,75,,
+Matt Henry,CSK,New Zealand,BWL,Y,200,,pace
+Rahul Chahar,CSK,India,BWL,Y,100,,spin
+Zak Foulkes,CSK,New Zealand,AR,Y,75,,pace
+Rohit Sharma,MI,India,BAT,Y,200,Y,
+Suryakumar Yadav,MI,India,BAT,Y,200,Y,
+Tilak Varma,MI,India,BAT,Y,200,,spin
+Robin Minz,MI,India,WK,N,30,,
+Ryan Rickelton,MI,South Africa,WK,Y,100,,
+Hardik Pandya,MI,India,AR,Y,200,Y,pace
+Naman Dhir,MI,India,AR,N,30,,spin
+Mitchell Santner,MI,New Zealand,AR,Y,200,,spin
+Will Jacks,MI,England,AR,Y,200,,spin
+Corbin Bosch,MI,South Africa,AR,Y,75,,pace
+Raj Bawa,MI,India,AR,N,30,,pace
+Trent Boult,MI,New Zealand,BWL,Y,200,,pace
+Jasprit Bumrah,MI,India,BWL,Y,200,Y,pace
+Deepak Chahar,MI,India,BWL,Y,200,,pace
+Ashwani Kumar,MI,India,BWL,N,30,,pace
+Raghu Sharma,MI,India,BWL,N,30,,spin
+AM Ghazanfar,MI,Afghanistan,BWL,Y,75,,spin
+Shardul Thakur,MI,India,AR,Y,200,,pace
+Sherfane Rutherford,MI,West Indies,BAT,Y,150,,pace
+Mayank Markande,MI,India,BWL,Y,75,,spin
+Quinton de Kock,MI,South Africa,WK,Y,200,,
+Danish Malewar,MI,India,BAT,N,30,,
+Mohammad Izhar,MI,India,BWL,N,30,,pace
+Atharva Ankolekar,MI,India,AR,N,30,,spin
+Mayank Rawat,MI,India,AR,N,30,,spin
+Ajinkya Rahane,KKR,India,BAT,Y,150,,
+Angkrish Raghuvanshi,KKR,India,BAT,N,30,,
+Anukul Roy,KKR,India,AR,N,30,,spin
+Harshit Rana,KKR,India,BWL,Y,150,,pace
+Manish Pandey,KKR,India,BAT,Y,75,,
+Ramandeep Singh,KKR,India,AR,Y,75,,pace
+Rinku Singh,KKR,India,BAT,Y,200,,
+Rovman Powell,KKR,West Indies,BAT,Y,150,,pace
+Sunil Narine,KKR,West Indies,AR,Y,200,Y,spin
+Umran Malik,KKR,India,BWL,Y,75,,pace
+Vaibhav Arora,KKR,India,BWL,N,30,,pace
+Varun Chakravarthy,KKR,India,BWL,Y,200,,spin
+Cameron Green,KKR,Australia,AR,Y,200,Y,pace
+Matheesha Pathirana,KKR,Sri Lanka,BWL,Y,200,,pace
+Mustafizur Rahman,KKR,Bangladesh,BWL,Y,200,,pace
+Tejasvi Singh,KKR,India,WK,N,30,,
+Rachin Ravindra,KKR,New Zealand,AR,Y,200,,spin
+Finn Allen,KKR,New Zealand,BAT,Y,200,,
+Tim Seifert,KKR,New Zealand,WK,Y,150,,
+Akash Deep,KKR,India,BWL,Y,100,,pace
+Rahul Tripathi,KKR,India,BAT,Y,75,,
+Daksh Kamra,KKR,India,AR,N,30,,spin
+Sarthak Ranjan,KKR,India,BAT,N,30,,
+Prashant Solanki,KKR,India,BWL,N,30,,spin
+Kartik Tyagi,KKR,India,BWL,N,30,,pace
+Rajat Patidar,RCB,India,BAT,Y,200,,
+Virat Kohli,RCB,India,BAT,Y,200,Y,
+Devdutt Padikkal,RCB,India,BAT,Y,200,,
+Phil Salt,RCB,England,WK,Y,200,,
+Jitesh Sharma,RCB,India,WK,Y,100,,
+Krunal Pandya,RCB,India,AR,Y,200,,spin
+Swapnil Singh,RCB,India,AR,N,30,,spin
+Tim David,RCB,Australia,BAT,Y,200,,
+Romario Shepherd,RCB,West Indies,AR,Y,150,,pace
+Jacob Bethell,RCB,England,AR,Y,125,,spin
+Josh Hazlewood,RCB,Australia,BWL,Y,200,,pace
+Yash Dayal,RCB,India,BWL,N,30,,pace
+Bhuvneshwar Kumar,RCB,India,BWL,Y,200,,pace
+Nuwan Thushara,RCB,Sri Lanka,BWL,Y,75,,pace
+Rasikh Salam,RCB,India,BWL,N,30,,pace
+Abhinandan Singh,RCB,India,BWL,N,30,,pace
+Suyash Sharma,RCB,India,BWL,N,30,,spin
+Venkatesh Iyer,RCB,India,AR,Y,200,,pace
+Jacob Duffy,RCB,New Zealand,BWL,Y,200,,pace
+Satvik Deswal,RCB,India,AR,N,30,,spin
+Mangesh Yadav,RCB,India,AR,N,30,,pace
+Jordan Cox,RCB,England,WK,Y,75,,
+Vicky Ostwal,RCB,India,AR,N,30,,spin
+Kanishk Chouhan,RCB,India,AR,N,30,,spin
+Vihaan Malhotra,RCB,India,BAT,N,30,,
+Shreyas Iyer,PBKS,India,BAT,Y,200,Y,
+Nehal Wadhera,PBKS,India,BAT,N,30,,
+Priyansh Arya,PBKS,India,BAT,N,30,,
+Prabhsimran Singh,PBKS,India,WK,N,30,,
+Shashank Singh,PBKS,India,BAT,N,30,,
+Pyla Avinash,PBKS,India,BAT,N,30,,
+Harnoor Pannu,PBKS,India,BAT,N,30,,
+Musheer Khan,PBKS,India,AR,N,30,,spin
+Vishnu Vinod,PBKS,India,WK,N,30,,
+Marcus Stoinis,PBKS,Australia,AR,Y,200,,pace
+Azmatullah Omarzai,PBKS,Afghanistan,AR,Y,150,,pace
+Suryansh Shedge,PBKS,India,AR,N,30,,pace
+Mitchell Owen,PBKS,Australia,AR,Y,150,,pace
+Arshdeep Singh,PBKS,India,BWL,Y,200,Y,pace
+Vyshak Vijaykumar,PBKS,India,BWL,N,30,,pace
+Marco Jansen,PBKS,South Africa,AR,Y,200,,pace
+Yash Thakur,PBKS,India,BWL,N,30,,pace
+Xavier Bartlett,PBKS,Australia,BWL,Y,75,,pace
+Lockie Ferguson,PBKS,New Zealand,BWL,Y,200,,pace
+Yuzvendra Chahal,PBKS,India,BWL,Y,200,,spin
+Harpreet Brar,PBKS,India,AR,N,30,,spin
+Ben Dwarshuis,PBKS,Australia,BWL,Y,100,,pace
+Cooper Connolly,PBKS,Australia,AR,Y,200,,spin
+Pravin Dubey,PBKS,India,BWL,N,30,,spin
+Vishal Nishad,PBKS,India,BWL,N,30,,spin
+Shubman Gill,GT,India,BAT,Y,200,Y,
+Rashid Khan,GT,Afghanistan,BWL,Y,200,Y,spin
+Sai Sudharsan,GT,India,BAT,Y,200,,
+Rahul Tewatia,GT,India,AR,N,50,,spin
+Shahrukh Khan,GT,India,BAT,N,40,,
+Kagiso Rabada,GT,South Africa,BWL,Y,200,,pace
+Jos Buttler,GT,England,WK,Y,200,Y,
+Mohammed Siraj,GT,India,BWL,Y,200,,pace
+Prasidh Krishna,GT,India,BWL,Y,200,,pace
+Nishant Sindhu,GT,India,AR,N,30,,spin
+Kumar Kushagra,GT,India,WK,N,30,,
+Anuj Rawat,GT,India,WK,N,30,,
+Manav Suthar,GT,India,BWL,N,30,,spin
+Washington Sundar,GT,India,AR,Y,200,,spin
+Arshad Khan,GT,India,AR,N,30,,pace
+Gurnoor Brar,GT,India,BWL,N,30,,pace
+Sai Kishore,GT,India,BWL,Y,75,,spin
+Ishant Sharma,GT,India,BWL,Y,75,,pace
+Jayant Yadav,GT,India,AR,Y,75,,spin
+Glenn Phillips,GT,New Zealand,AR,Y,200,,spin
+Jason Holder,GT,West Indies,AR,Y,200,,pace
+Ashok Sharma,GT,India,BWL,N,30,,pace
+Tom Banton,GT,England,WK,Y,200,,
+Prithviraj Yarra,GT,India,BWL,N,30,,pace
+Luke Wood,GT,England,BWL,Y,100,,pace
+Yashasvi Jaiswal,RR,India,BAT,Y,200,Y,
+Vaibhav Suryavanshi,RR,India,BAT,N,30,,
+Dhruv Jurel,RR,India,WK,Y,150,,
+Riyan Parag,RR,India,AR,Y,150,,spin
+Shimron Hetmyer,RR,West Indies,BAT,Y,200,,
+Shubham Dubey,RR,India,BAT,N,30,,
+Yudhvir Singh Charak,RR,India,AR,N,30,,pace
+Jofra Archer,RR,England,BWL,Y,200,,pace
+Tushar Deshpande,RR,India,BWL,Y,100,,pace
+Sandeep Sharma,RR,India,BWL,Y,75,,pace
+Kwena Maphaka,RR,South Africa,BWL,Y,75,,pace
+Nandre Burger,RR,South Africa,BWL,Y,125,,pace
+Lhuan-dre Pretorius,RR,South Africa,WK,Y,75,,
+Ravindra Jadeja,RR,India,AR,Y,200,Y,spin
+Donovan Ferreira,RR,South Africa,WK,Y,100,,
+Sam Curran,RR,England,AR,Y,200,,pace
+Ravi Bishnoi,RR,India,BWL,Y,200,,spin
+Ravi Singh,RR,India,WK,N,30,,
+Sushant Mishra,RR,India,BWL,N,30,,pace
+Brijesh Sharma,RR,India,BWL,N,30,,pace
+Aman Rao Perala,RR,India,BAT,N,30,,
+Vignesh Puthur,RR,India,BWL,N,30,,spin
+Yash Raj Punja,RR,India,BWL,N,30,,spin
+Kuldeep Sen,RR,India,BWL,Y,75,,pace
+Adam Milne,RR,New Zealand,BWL,Y,200,,pace
+Pat Cummins,SRH,Australia,BWL,Y,200,Y,pace
+Travis Head,SRH,Australia,BAT,Y,200,Y,
+Abhishek Sharma,SRH,India,AR,Y,200,Y,spin
+Aniket Verma,SRH,India,BAT,N,30,,
+Smaran Ravichandran,SRH,India,BAT,N,30,,
+Ishan Kishan,SRH,India,WK,Y,200,,
+Heinrich Klaasen,SRH,South Africa,WK,Y,200,Y,
+Nitish Kumar Reddy,SRH,India,AR,Y,200,,pace
+Harsh Dubey,SRH,India,AR,N,30,,spin
+Kamindu Mendis,SRH,Sri Lanka,AR,Y,75,,spin
+Harshal Patel,SRH,India,BWL,Y,200,,pace
+Brydon Carse,SRH,England,AR,Y,100,,pace
+Jaydev Unadkat,SRH,India,BWL,Y,100,,pace
+Eshan Malinga,SRH,Sri Lanka,BWL,Y,75,,pace
+Zeeshan Ansari,SRH,India,BWL,N,30,,spin
+Liam Livingstone,SRH,England,AR,Y,200,,spin
+Jack Edwards,SRH,Australia,AR,N,50,,pace
+Salil Arora,SRH,India,WK,N,30,,
+Shivam Mavi,SRH,India,BWL,Y,75,,pace
+Krains Fuletra,SRH,India,BWL,N,30,,spin
+Praful Hinge,SRH,India,BWL,N,30,,pace
+Amit Kumar,SRH,India,BWL,N,30,,pace
+Onkar Tarmale,SRH,India,BWL,N,30,,pace
+Sakib Hussain,SRH,India,BWL,N,30,,pace
+Shivang Kumar,SRH,India,AR,N,30,,spin
+Rishabh Pant,LSG,India,WK,Y,200,Y,
+Abdul Samad,LSG,India,BAT,N,40,,
+Ayush Badoni,LSG,India,BAT,N,40,,spin
+Aiden Markram,LSG,South Africa,BAT,Y,200,,spin
+Mitchell Marsh,LSG,Australia,AR,Y,200,,pace
+Matthew Breetzke,LSG,South Africa,BAT,Y,100,,
+Nicholas Pooran,LSG,West Indies,WK,Y,200,Y,
+Himmat Singh,LSG,India,BAT,N,30,,
+Shahbaz Ahmed,LSG,India,AR,Y,100,,spin
+Arshin Kulkarni,LSG,India,AR,N,30,,pace
+Mayank Yadav,LSG,India,BWL,Y,150,,pace
+Avesh Khan,LSG,India,BWL,Y,200,,pace
+Mohsin Khan,LSG,India,BWL,N,30,,pace
+Digvesh Rathi,LSG,India,BWL,N,30,,spin
+M. Siddharth,LSG,India,BWL,N,30,,spin
+Prince Yadav,LSG,India,BWL,N,30,,pace
+Akash Singh,LSG,India,BWL,N,30,,pace
+Arjun Tendulkar,LSG,India,AR,N,30,,pace
+Mohammed Shami,LSG,India,BWL,Y,200,,pace
+Naman Tiwari,LSG,India,BWL,N,30,,pace
+Wanindu Hasaranga,LSG,Sri Lanka,AR,Y,200,,spin
+Josh Inglis,LSG,Australia,WK,Y,200,,
+Akshat Raghuwanshi,LSG,India,BAT,N,30,,
+Anrich Nortje,LSG,South Africa,BWL,Y,200,,pace
+Mukul Choudhary,LSG,India,BAT,N,30,,
+Axar Patel,DC,India,AR,Y,200,,spin
+KL Rahul,DC,India,WK,Y,200,Y,
+Tristan Stubbs,DC,South Africa,WK,Y,150,,
+Sameer Rizvi,DC,India,BAT,N,30,,
+Karun Nair,DC,India,BAT,Y,75,,
+Abishek Porel,DC,India,WK,N,30,,
+Ashutosh Sharma,DC,India,BAT,N,30,,
+Vipraj Nigam,DC,India,AR,N,30,,spin
+Madhav Tiwari,DC,India,AR,N,30,,pace
+Tripurana Vijay,DC,India,AR,N,30,,spin
+Ajay Mandal,DC,India,AR,N,30,,spin
+Kuldeep Yadav,DC,India,BWL,Y,200,,spin
+Mitchell Starc,DC,Australia,BWL,Y,200,Y,pace
+T. Natarajan,DC,India,BWL,Y,200,,pace
+Mukesh Kumar,DC,India,BWL,Y,200,,pace
+Dushmantha Chameera,DC,Sri Lanka,BWL,Y,75,,pace
+Nitish Rana,DC,India,BAT,Y,150,,spin
+Auqib Dar,DC,India,BWL,N,30,,pace
+Pathum Nissanka,DC,Sri Lanka,BAT,Y,75,,
+Kyle Jamieson,DC,New Zealand,AR,Y,200,,pace
+Lungisani Ngidi,DC,South Africa,BWL,Y,200,,pace
+Ben Duckett,DC,England,BAT,Y,200,,
+David Miller,DC,South Africa,BAT,Y,200,,
+Prithvi Shaw,DC,India,BAT,Y,75,,
+Sahil Parakh,DC,India,BAT,N,30,,
