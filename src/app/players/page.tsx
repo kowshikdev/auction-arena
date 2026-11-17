@@ -24,6 +24,7 @@ export default function PlayersPage() {
   const [base, setBase] = useState("");
   const [group, setGroup] = useState("");
   const [sort, setSort] = useState("set");
+  const [status, setStatus] = useState("auction");
   const [open, setOpen] = useState<Player | null>(null);
 
   const countries = useMemo(() => [...new Set(players.map((p) => p.country))].sort(), [players]);
@@ -32,7 +33,9 @@ export default function PlayersPage() {
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
     const list = players.filter((p) => {
-      if (!p.is_active) return false;
+      if (!p.is_active || !p.is_available) return false;
+      if (status === "auction" && p.is_retained) return false;
+      if (status === "retained" && !p.is_retained) return false;
       if (q && !p.full_name.toLowerCase().includes(q)) return false;
       if (role && p.role !== role) return false;
       if (nationality === "indian" && p.is_overseas) return false;
@@ -48,7 +51,7 @@ export default function PlayersPage() {
     else if (sort === "price-asc") list.sort((a, b) => a.base_price_lakh - b.base_price_lakh || a.full_name.localeCompare(b.full_name));
     else list.sort((a, b) => a.set_order - b.set_order || b.base_price_lakh - a.base_price_lakh);
     return list;
-  }, [players, query, role, nationality, team, base, group, sort]);
+  }, [players, query, role, nationality, team, base, group, sort, status]);
 
   return (
     <div className="stadium min-h-dvh">
@@ -57,12 +60,17 @@ export default function PlayersPage() {
         <p className="eyebrow">{season?.name ?? "Player catalogue"}</p>
         <h1 className="display mt-1 text-5xl">Players</h1>
         <p className="mt-2 max-w-2xl text-sm text-mute">
-          Every player available to auction this season, grouped into sets the way a real auction list is. Teams shown are
-          current squads and change when retention lists are updated.
+          The {season?.name ?? "season"} catalogue: players up for auction (released and registered) in auction-list sets, and
+          the squads each franchise retained. Admins can update teams and retentions.
         </p>
 
-        <div className="mt-6 grid grid-cols-2 gap-2 md:grid-cols-4 lg:grid-cols-7">
+        <div className="mt-6 grid grid-cols-2 gap-2 md:grid-cols-4 lg:grid-cols-8">
           <Input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search by name" aria-label="Search players" className="col-span-2 lg:col-span-1" />
+          <Select value={status} onChange={(e) => setStatus(e.target.value)} aria-label="Status">
+            <option value="auction">In the auction</option>
+            <option value="retained">Retained</option>
+            <option value="all">All players</option>
+          </Select>
           <Select value={role} onChange={(e) => setRole(e.target.value)} aria-label="Role">
             <option value="">All roles</option>
             {Object.entries(ROLE_LABEL).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
@@ -74,7 +82,7 @@ export default function PlayersPage() {
             {countries.filter((c) => c !== "India").map((c) => <option key={c} value={c}>{c}</option>)}
           </Select>
           <Select value={team} onChange={(e) => setTeam(e.target.value)} aria-label="Team">
-            <option value="">All teams</option>
+            <option value="">{status === "auction" ? "Any last team" : "All teams"}</option>
             {FRANCHISES.map((f) => <option key={f.id} value={f.id}>{f.name}</option>)}
           </Select>
           <Select value={base} onChange={(e) => setBase(e.target.value)} aria-label="Base price">
@@ -93,7 +101,7 @@ export default function PlayersPage() {
           </Select>
         </div>
 
-        <p className="mt-4 text-xs text-dim">{loading ? "Loading players" : `${visible.length} of ${players.filter((p) => p.is_active).length} players`}</p>
+        <p className="mt-4 text-xs text-dim">{loading ? "Loading players" : `${visible.length} of ${players.filter((p) => p.is_active && p.is_available).length} players`}</p>
 
         {loading ? (
           <div className="grid place-items-center py-20"><Spinner className="size-8 text-gold" /></div>

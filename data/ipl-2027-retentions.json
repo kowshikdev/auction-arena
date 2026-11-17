@@ -1,0 +1,57 @@
+{
+  "season": "ipl-2027",
+  "source": "Retention lists and purse graphic shared by the project owner, 17 Nov 2026. Purses from the 'Purse remaining ahead of TATA IPL 2027 auction' graphic.",
+  "excluded": ["MS Dhoni", "Travis Head", "Mitchell Starc"],
+  "teams": {
+    "LSG": {
+      "purse_lakh": 4745, "slots": 7, "overseas_slots": 3,
+      "retained": ["Abdul Samad", "Aiden Markram", "Akash Singh", "Akshat Raghuwanshi", "Arjun Tendulkar", "Arshin Kulkarni", "Ayush Badoni", "Digvesh Rathi", "Josh Inglis", "Kuldeep Yadav", "Mayank Yadav", "Mitchell Marsh", "Mohsin Khan", "Mukul Choudhary", "Nicholas Pooran", "Prince Yadav", "Sam Curran", "Shahbaz Ahmed"],
+      "released": ["Anrich Nortje", "Avesh Khan", "George Linde", "Himmat Singh", "Matthew Breetzke", "Naman Tiwari", "Wanindu Hasaranga"]
+    },
+    "KKR": {
+      "purse_lakh": 4165, "slots": 8, "overseas_slots": 3,
+      "retained": ["Angkrish Raghuvanshi", "Anukul Roy", "Cameron Green", "Finn Allen", "Harshit Rana", "Kartik Tyagi", "Manish Pandey", "Prashant Solanki", "Ramandeep Singh", "Rinku Singh", "Rovman Powell", "Sarthak Ranjan", "Saurabh Dubey", "Sunil Narine", "Tim Seifert", "Vaibhav Arora", "Varun Chakaravarthy"],
+      "released": ["Ajinkya Rahane", "Akash Deep", "Blessing Muzarabani", "Daksh Kamra", "Luvnith Sisodia", "Matheesha Pathirana", "Mustafizur Rahman", "Navdeep Saini", "Rachin Ravindra", "Rahul Tripathi", "Tejasvi Singh", "Umran Malik"]
+    },
+    "SRH": {
+      "purse_lakh": 4015, "slots": 7, "overseas_slots": 3,
+      "retained": ["Abhishek Sharma", "Ishan Kishan", "Aniket Verma", "Heinrich Klaasen", "Nitish Kumar Reddy", "Smaran Ravichandran", "Salil Arora", "Pat Cummins", "Brydon Carse", "Harsh Dubey", "Eshan Malinga", "Khaleel Ahmed", "Krains Fuletra", "Nathan Ellis", "Praful Hinge", "Sakib Hussain", "Shivang Kumar", "T. Natarajan"],
+      "released": ["Travis Head", "David Payne", "Dilshan Madushanka", "Gerald Coetzee", "Jaydev Unadkat", "Kamindu Mendis", "Onkar Tarmale", "R.S. Ambrish", "Shivam Mavi", "Amit Kumar"]
+    },
+    "DC": {
+      "purse_lakh": 3950, "slots": 9, "overseas_slots": 4,
+      "retained": ["Ashutosh Sharma", "Auqib Dar", "Axar Patel", "David Miller", "KL Rahul", "Kyle Jamieson", "Lungisani Ngidi", "Madhav Tiwari", "Mukesh Kumar", "Prithvi Shaw", "Rishabh Pant", "Sameer Rizvi", "Tripurana Vijay", "Tristan Stubbs", "Vipraj Nigam", "Zeeshan Ansari"],
+      "released": ["Abishek Porel", "Ajay Mandal", "Dushmantha Chameera", "Karun Nair", "Mitchell Starc", "Nitish Rana", "Pathum Nissanka", "Rehan Ahmed", "Sahil Parakh"]
+    },
+    "MI": {
+      "purse_lakh": 3260, "slots": 9, "overseas_slots": 2,
+      "retained": ["Arshdeep Singh", "Ashwani Kumar", "Corbin Bosch", "Jasprit Bumrah", "Mitchell Santner", "Naman Dhir", "Quinton de Kock", "Raghu Sharma", "Raj Angad Bawa", "Rohit Sharma", "Ryan Rickelton", "Shardul Thakur", "Sherfane Rutherford", "Suryakumar Yadav", "Tilak Varma", "Will Jacks"],
+      "released": ["AM Ghazanfar", "Atharva Ankolekar", "Danish Malewar", "Deepak Chahar", "Keshav Maharaj", "Krish Bhagat", "Mahipal Lomror", "Mayank Markande", "Mayank Rawat", "Mohammad Izhar", "Robin Minz", "Ruchit Ahir", "Trent Boult"]
+    },
+    "CSK": {
+      "purse_lakh": 2805, "slots": 6, "overseas_slots": 2,
+      "retained": ["Akeal Hosein", "Anshul Kamboj", "Ayush Mhatre", "Dewald Brevis", "Gurjapneet Singh", "Jack Edwards", "Jamie Overton", "Kartik Sharma", "Liam Livingstone", "Mukesh Choudhary", "Noor Ahmad", "Rahul Chahar", "Ramakrishna Ghosh", "Ruturaj Gaikwad", "Sanju Samson", "Sarfaraz Khan", "Shivam Dube", "Shreyas Gopal", "Urvil Patel"],
+      "released": ["MS Dhoni", "Aman Khan", "Dian Forrester", "Kuldip Yadav", "Macneil Noronha", "Matt Henry", "Matthew Short", "Akash Madhwal", "Prashant Veer", "Spencer Johnson", "Zak Foulkes"]
+    },
+    "RR": {
+      "purse_lakh": 2705, "slots": 6, "overseas_slots": 3,
+      "retained": ["Yashasvi Jaiswal", "Vaibhav Sooryavanshi", "Riyan Parag", "Dhruv Jurel", "Lhuan-dre Pretorius", "Aman Rao Perala", "Donovan Ferreira", "Shubham Dubey", "Dasun Shanaka", "Ravindra Jadeja", "Yash Raj Punja", "Jofra Archer", "Mohd. Shami", "Nandre Burger", "Ravi Bishnoi", "Manimaran Siddharth", "Brijesh Sharma", "Sandeep Sharma", "Sushant Mishra"],
+      "released": ["Adam Milne", "Emanjot Chahal", "Kuldeep Sen", "Kwena Maphaka", "Ravi Singh", "Shimron Hetmyer", "Tushar Deshpande", "Vignesh Puthur", "Yudhvir Charak"]
+    },
+    "PBKS": {
+      "purse_lakh": 1860, "slots": 6, "overseas_slots": 2,
+      "retained": ["Azmatullah Omarzai", "Ben Dwarshuis", "Cooper Connolly", "Hardik Pandya", "Harnoor Pannu", "Harpreet Brar", "Marco Jansen", "Marcus Stoinis", "Musheer Khan", "Prabhsimran Singh", "Priyansh Arya", "Shashank Singh", "Shreyas Iyer", "Suryansh Shedge", "Vishnu Vinod", "Vyshak Vijaykumar", "Xavier Bartlett", "Yash Thakur", "Yuzvendra Chahal"],
+      "released": ["Lockie Ferguson", "Mitch Owen", "Nehal Wadhera", "Pravin Dubey", "Pyla Avinash", "Vishal Nishad"]
+    },
+    "RCB": {
+      "purse_lakh": 1415, "slots": 5, "overseas_slots": 1,
+      "retained": ["Abhinandan Singh", "Bhuvneshwar Kumar", "Devdutt Padikkal", "Jacob Duffy", "Jitesh Sharma", "Jordan Cox", "Josh Hazlewood", "Kanishk Chouhan", "Krunal Pandya", "Nuwan Thushara", "Phil Salt", "Rajat Patidar", "Rasikh Dar", "Romario Shepherd", "Suyash Sharma", "Tim David", "Venkatesh Iyer", "Vicky Ostwal", "Virat Kohli", "Yash Dayal"],
+      "released": ["Jacob Bethell", "Mangesh Yadav", "Richard Gleeson", "Satvik Deswal", "Swapnil Singh", "Vihaan Malhotra"]
+    },
+    "GT": {
+      "purse_lakh": 875, "slots": 3, "overseas_slots": 2,
+      "retained": ["Shubman Gill", "Jos Buttler", "Sai Sudharsan", "Glenn Phillips", "Tom Banton", "Anuj Rawat", "Kumar Kushagra", "Washington Sundar", "Rahul Tewatia", "Jason Holder", "Nishant Sindhu", "Jayant Yadav", "Mohd. Arshad Khan", "Rashid Khan", "Sai Kishore", "Manav Suthar", "Kagiso Rabada", "Mohd. Siraj", "Prasidh Krishna", "Harshal Patel", "Gurnoor Brar", "Ashok Sharma"],
+      "released": ["Connor Esterhuizen", "Luke Wood", "Ishant Sharma", "Kulwant Khejroliya", "Prithviraj Yarra", "Shahrukh Khan"]
+    }
+  }
+}

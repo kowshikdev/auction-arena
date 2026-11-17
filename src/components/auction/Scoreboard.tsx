@@ -52,7 +52,7 @@ export function Scoreboard({
                 <span className={cn("absolute -bottom-0.5 -right-0.5 size-3 rounded-full border-2 border-panel", isOnline ? "bg-go" : "bg-dim")} title={isOnline ? "Online" : "Disconnected"} />
               </span>
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-1.5">
+                <div className="flex flex-wrap items-center gap-1">
                   <span className="display text-xl leading-none">{team.franchise_id}</span>
                   {mine && <Badge tone="gold">You</Badge>}
                   {leading && <Badge tone="go">Leading</Badge>}
@@ -64,10 +64,10 @@ export function Scoreboard({
                   {owner && speaking.has(owner.user_id) && <span className="font-bold text-go">· speaking</span>}
                 </div>
               </div>
-              <div className="text-right">
+              <div className="shrink-0 text-right">
                 <p data-testid={`purse-${team.franchise_id}`} className="display tabular text-xl leading-none">{formatMoney(team.purse_remaining_lakh)}</p>
                 <p className="tabular mt-1 text-[11px] text-mute">
-                  {team.squad_count}/{settings.squad_max} · {team.overseas_count}/{settings.overseas_max} OS
+                  {settings.squad_max - team.squad_count} slots · {settings.overseas_max - team.overseas_count} OS
                 </p>
               </div>
             </div>

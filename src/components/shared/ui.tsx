@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, type ButtonHTMLAttributes, type InputHTMLAttributes, type ReactNode, type SelectHTMLAttributes } from "react";
+import { useEffect, useRef, useState, type ButtonHTMLAttributes, type InputHTMLAttributes, type ReactNode, type SelectHTMLAttributes } from "react";
 
 import { cn } from "@/lib/cn";
 
@@ -180,6 +180,67 @@ export function EmptyState({ title, children }: { title: string; children?: Reac
     <div className="rounded-xl border border-dashed border-line px-6 py-10 text-center">
       <p className="display text-xl text-mute">{title}</p>
       {children && <div className="mt-2 text-sm text-dim">{children}</div>}
+    </div>
+  );
+}
+
+export type MenuItem = { label: string; onSelect: () => void; tone?: "danger" };
+
+/** Small "⋯" actions menu. Closes on outside click, Escape, or after choosing. */
+export function Menu({ label, items }: { label: string; items: MenuItem[] }) {
+  const [open, setOpen] = useState(false);
+  const root = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (event: MouseEvent) => {
+      if (!root.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const onKey = (event: KeyboardEvent) => event.key === "Escape" && setOpen(false);
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div ref={root} className="relative shrink-0">
+      <button
+        type="button"
+        aria-label={label}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className={cn(
+          "grid size-8 place-items-center rounded-lg text-lg leading-none text-mute transition hover:bg-white/10 hover:text-chalk",
+          open && "bg-white/10 text-chalk",
+        )}
+      >
+        ⋯
+      </button>
+      {open && (
+        <div role="menu" className="absolute right-0 top-9 z-30 min-w-44 animate-pop overflow-hidden rounded-xl border border-line-strong bg-panel-2 p-1 shadow-2xl">
+          {items.map((item) => (
+            <button
+              key={item.label}
+              role="menuitem"
+              type="button"
+              onClick={() => {
+                setOpen(false);
+                item.onSelect();
+              }}
+              className={cn(
+                "block w-full rounded-lg px-3 py-2 text-left text-sm font-medium transition hover:bg-white/10",
+                item.tone === "danger" ? "text-[#ff8f9b]" : "text-chalk",
+              )}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

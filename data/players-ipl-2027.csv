@@ -1,251 +1,530 @@
-name,team,country,role,capped,base_lakh,marquee,bowling
-Ruturaj Gaikwad,CSK,India,BAT,Y,200,Y,
-Ayush Mhatre,CSK,India,BAT,N,30,,
-Dewald Brevis,CSK,South Africa,BAT,Y,150,,spin
-MS Dhoni,CSK,India,WK,Y,200,Y,
-Urvil Patel,CSK,India,WK,N,30,,
-Shivam Dube,CSK,India,AR,Y,200,,pace
-Jamie Overton,CSK,England,AR,Y,150,,pace
-Ramakrishna Ghosh,CSK,India,AR,N,30,,pace
-Noor Ahmad,CSK,Afghanistan,BWL,Y,200,,spin
-Khaleel Ahmed,CSK,India,BWL,Y,200,,pace
-Anshul Kamboj,CSK,India,BWL,Y,75,,pace
-Gurjapneet Singh,CSK,India,BWL,N,30,,pace
-Nathan Ellis,CSK,Australia,BWL,Y,200,,pace
-Shreyas Gopal,CSK,India,BWL,N,30,,spin
-Mukesh Choudhary,CSK,India,BWL,N,30,,pace
-Sanju Samson,CSK,India,WK,Y,200,Y,
-Akeal Hosein,CSK,West Indies,BWL,Y,200,,spin
-Prashant Veer,CSK,India,AR,N,30,,spin
-Kartik Sharma,CSK,India,WK,N,30,,
-Matthew Short,CSK,Australia,AR,Y,150,,spin
-Aman Khan,CSK,India,AR,N,30,,pace
-Sarfaraz Khan,CSK,India,BAT,Y,75,,
-Matt Henry,CSK,New Zealand,BWL,Y,200,,pace
-Rahul Chahar,CSK,India,BWL,Y,100,,spin
-Zak Foulkes,CSK,New Zealand,AR,Y,75,,pace
-Rohit Sharma,MI,India,BAT,Y,200,Y,
-Suryakumar Yadav,MI,India,BAT,Y,200,Y,
-Tilak Varma,MI,India,BAT,Y,200,,spin
-Robin Minz,MI,India,WK,N,30,,
-Ryan Rickelton,MI,South Africa,WK,Y,100,,
-Hardik Pandya,MI,India,AR,Y,200,Y,pace
-Naman Dhir,MI,India,AR,N,30,,spin
-Mitchell Santner,MI,New Zealand,AR,Y,200,,spin
-Will Jacks,MI,England,AR,Y,200,,spin
-Corbin Bosch,MI,South Africa,AR,Y,75,,pace
-Raj Bawa,MI,India,AR,N,30,,pace
-Trent Boult,MI,New Zealand,BWL,Y,200,,pace
-Jasprit Bumrah,MI,India,BWL,Y,200,Y,pace
-Deepak Chahar,MI,India,BWL,Y,200,,pace
-Ashwani Kumar,MI,India,BWL,N,30,,pace
-Raghu Sharma,MI,India,BWL,N,30,,spin
-AM Ghazanfar,MI,Afghanistan,BWL,Y,75,,spin
-Shardul Thakur,MI,India,AR,Y,200,,pace
-Sherfane Rutherford,MI,West Indies,BAT,Y,150,,pace
-Mayank Markande,MI,India,BWL,Y,75,,spin
-Quinton de Kock,MI,South Africa,WK,Y,200,,
-Danish Malewar,MI,India,BAT,N,30,,
-Mohammad Izhar,MI,India,BWL,N,30,,pace
-Atharva Ankolekar,MI,India,AR,N,30,,spin
-Mayank Rawat,MI,India,AR,N,30,,spin
-Ajinkya Rahane,KKR,India,BAT,Y,150,,
-Angkrish Raghuvanshi,KKR,India,BAT,N,30,,
-Anukul Roy,KKR,India,AR,N,30,,spin
-Harshit Rana,KKR,India,BWL,Y,150,,pace
-Manish Pandey,KKR,India,BAT,Y,75,,
-Ramandeep Singh,KKR,India,AR,Y,75,,pace
-Rinku Singh,KKR,India,BAT,Y,200,,
-Rovman Powell,KKR,West Indies,BAT,Y,150,,pace
-Sunil Narine,KKR,West Indies,AR,Y,200,Y,spin
-Umran Malik,KKR,India,BWL,Y,75,,pace
-Vaibhav Arora,KKR,India,BWL,N,30,,pace
-Varun Chakravarthy,KKR,India,BWL,Y,200,,spin
-Cameron Green,KKR,Australia,AR,Y,200,Y,pace
-Matheesha Pathirana,KKR,Sri Lanka,BWL,Y,200,,pace
-Mustafizur Rahman,KKR,Bangladesh,BWL,Y,200,,pace
-Tejasvi Singh,KKR,India,WK,N,30,,
-Rachin Ravindra,KKR,New Zealand,AR,Y,200,,spin
-Finn Allen,KKR,New Zealand,BAT,Y,200,,
-Tim Seifert,KKR,New Zealand,WK,Y,150,,
-Akash Deep,KKR,India,BWL,Y,100,,pace
-Rahul Tripathi,KKR,India,BAT,Y,75,,
-Daksh Kamra,KKR,India,AR,N,30,,spin
-Sarthak Ranjan,KKR,India,BAT,N,30,,
-Prashant Solanki,KKR,India,BWL,N,30,,spin
-Kartik Tyagi,KKR,India,BWL,N,30,,pace
-Rajat Patidar,RCB,India,BAT,Y,200,,
-Virat Kohli,RCB,India,BAT,Y,200,Y,
-Devdutt Padikkal,RCB,India,BAT,Y,200,,
-Phil Salt,RCB,England,WK,Y,200,,
-Jitesh Sharma,RCB,India,WK,Y,100,,
-Krunal Pandya,RCB,India,AR,Y,200,,spin
-Swapnil Singh,RCB,India,AR,N,30,,spin
-Tim David,RCB,Australia,BAT,Y,200,,
-Romario Shepherd,RCB,West Indies,AR,Y,150,,pace
-Jacob Bethell,RCB,England,AR,Y,125,,spin
-Josh Hazlewood,RCB,Australia,BWL,Y,200,,pace
-Yash Dayal,RCB,India,BWL,N,30,,pace
-Bhuvneshwar Kumar,RCB,India,BWL,Y,200,,pace
-Nuwan Thushara,RCB,Sri Lanka,BWL,Y,75,,pace
-Rasikh Salam,RCB,India,BWL,N,30,,pace
-Abhinandan Singh,RCB,India,BWL,N,30,,pace
-Suyash Sharma,RCB,India,BWL,N,30,,spin
-Venkatesh Iyer,RCB,India,AR,Y,200,,pace
-Jacob Duffy,RCB,New Zealand,BWL,Y,200,,pace
-Satvik Deswal,RCB,India,AR,N,30,,spin
-Mangesh Yadav,RCB,India,AR,N,30,,pace
-Jordan Cox,RCB,England,WK,Y,75,,
-Vicky Ostwal,RCB,India,AR,N,30,,spin
-Kanishk Chouhan,RCB,India,AR,N,30,,spin
-Vihaan Malhotra,RCB,India,BAT,N,30,,
-Shreyas Iyer,PBKS,India,BAT,Y,200,Y,
-Nehal Wadhera,PBKS,India,BAT,N,30,,
-Priyansh Arya,PBKS,India,BAT,N,30,,
-Prabhsimran Singh,PBKS,India,WK,N,30,,
-Shashank Singh,PBKS,India,BAT,N,30,,
-Pyla Avinash,PBKS,India,BAT,N,30,,
-Harnoor Pannu,PBKS,India,BAT,N,30,,
-Musheer Khan,PBKS,India,AR,N,30,,spin
-Vishnu Vinod,PBKS,India,WK,N,30,,
-Marcus Stoinis,PBKS,Australia,AR,Y,200,,pace
-Azmatullah Omarzai,PBKS,Afghanistan,AR,Y,150,,pace
-Suryansh Shedge,PBKS,India,AR,N,30,,pace
-Mitchell Owen,PBKS,Australia,AR,Y,150,,pace
-Arshdeep Singh,PBKS,India,BWL,Y,200,Y,pace
-Vyshak Vijaykumar,PBKS,India,BWL,N,30,,pace
-Marco Jansen,PBKS,South Africa,AR,Y,200,,pace
-Yash Thakur,PBKS,India,BWL,N,30,,pace
-Xavier Bartlett,PBKS,Australia,BWL,Y,75,,pace
-Lockie Ferguson,PBKS,New Zealand,BWL,Y,200,,pace
-Yuzvendra Chahal,PBKS,India,BWL,Y,200,,spin
-Harpreet Brar,PBKS,India,AR,N,30,,spin
-Ben Dwarshuis,PBKS,Australia,BWL,Y,100,,pace
-Cooper Connolly,PBKS,Australia,AR,Y,200,,spin
-Pravin Dubey,PBKS,India,BWL,N,30,,spin
-Vishal Nishad,PBKS,India,BWL,N,30,,spin
-Shubman Gill,GT,India,BAT,Y,200,Y,
-Rashid Khan,GT,Afghanistan,BWL,Y,200,Y,spin
-Sai Sudharsan,GT,India,BAT,Y,200,,
-Rahul Tewatia,GT,India,AR,N,50,,spin
-Shahrukh Khan,GT,India,BAT,N,40,,
-Kagiso Rabada,GT,South Africa,BWL,Y,200,,pace
-Jos Buttler,GT,England,WK,Y,200,Y,
-Mohammed Siraj,GT,India,BWL,Y,200,,pace
-Prasidh Krishna,GT,India,BWL,Y,200,,pace
-Nishant Sindhu,GT,India,AR,N,30,,spin
-Kumar Kushagra,GT,India,WK,N,30,,
-Anuj Rawat,GT,India,WK,N,30,,
-Manav Suthar,GT,India,BWL,N,30,,spin
-Washington Sundar,GT,India,AR,Y,200,,spin
-Arshad Khan,GT,India,AR,N,30,,pace
-Gurnoor Brar,GT,India,BWL,N,30,,pace
-Sai Kishore,GT,India,BWL,Y,75,,spin
-Ishant Sharma,GT,India,BWL,Y,75,,pace
-Jayant Yadav,GT,India,AR,Y,75,,spin
-Glenn Phillips,GT,New Zealand,AR,Y,200,,spin
-Jason Holder,GT,West Indies,AR,Y,200,,pace
-Ashok Sharma,GT,India,BWL,N,30,,pace
-Tom Banton,GT,England,WK,Y,200,,
-Prithviraj Yarra,GT,India,BWL,N,30,,pace
-Luke Wood,GT,England,BWL,Y,100,,pace
-Yashasvi Jaiswal,RR,India,BAT,Y,200,Y,
-Vaibhav Suryavanshi,RR,India,BAT,N,30,,
-Dhruv Jurel,RR,India,WK,Y,150,,
-Riyan Parag,RR,India,AR,Y,150,,spin
-Shimron Hetmyer,RR,West Indies,BAT,Y,200,,
-Shubham Dubey,RR,India,BAT,N,30,,
-Yudhvir Singh Charak,RR,India,AR,N,30,,pace
-Jofra Archer,RR,England,BWL,Y,200,,pace
-Tushar Deshpande,RR,India,BWL,Y,100,,pace
-Sandeep Sharma,RR,India,BWL,Y,75,,pace
-Kwena Maphaka,RR,South Africa,BWL,Y,75,,pace
-Nandre Burger,RR,South Africa,BWL,Y,125,,pace
-Lhuan-dre Pretorius,RR,South Africa,WK,Y,75,,
-Ravindra Jadeja,RR,India,AR,Y,200,Y,spin
-Donovan Ferreira,RR,South Africa,WK,Y,100,,
-Sam Curran,RR,England,AR,Y,200,,pace
-Ravi Bishnoi,RR,India,BWL,Y,200,,spin
-Ravi Singh,RR,India,WK,N,30,,
-Sushant Mishra,RR,India,BWL,N,30,,pace
-Brijesh Sharma,RR,India,BWL,N,30,,pace
-Aman Rao Perala,RR,India,BAT,N,30,,
-Vignesh Puthur,RR,India,BWL,N,30,,spin
-Yash Raj Punja,RR,India,BWL,N,30,,spin
-Kuldeep Sen,RR,India,BWL,Y,75,,pace
-Adam Milne,RR,New Zealand,BWL,Y,200,,pace
-Pat Cummins,SRH,Australia,BWL,Y,200,Y,pace
-Travis Head,SRH,Australia,BAT,Y,200,Y,
-Abhishek Sharma,SRH,India,AR,Y,200,Y,spin
-Aniket Verma,SRH,India,BAT,N,30,,
-Smaran Ravichandran,SRH,India,BAT,N,30,,
-Ishan Kishan,SRH,India,WK,Y,200,,
-Heinrich Klaasen,SRH,South Africa,WK,Y,200,Y,
-Nitish Kumar Reddy,SRH,India,AR,Y,200,,pace
-Harsh Dubey,SRH,India,AR,N,30,,spin
-Kamindu Mendis,SRH,Sri Lanka,AR,Y,75,,spin
-Harshal Patel,SRH,India,BWL,Y,200,,pace
-Brydon Carse,SRH,England,AR,Y,100,,pace
-Jaydev Unadkat,SRH,India,BWL,Y,100,,pace
-Eshan Malinga,SRH,Sri Lanka,BWL,Y,75,,pace
-Zeeshan Ansari,SRH,India,BWL,N,30,,spin
-Liam Livingstone,SRH,England,AR,Y,200,,spin
-Jack Edwards,SRH,Australia,AR,N,50,,pace
-Salil Arora,SRH,India,WK,N,30,,
-Shivam Mavi,SRH,India,BWL,Y,75,,pace
-Krains Fuletra,SRH,India,BWL,N,30,,spin
-Praful Hinge,SRH,India,BWL,N,30,,pace
-Amit Kumar,SRH,India,BWL,N,30,,pace
-Onkar Tarmale,SRH,India,BWL,N,30,,pace
-Sakib Hussain,SRH,India,BWL,N,30,,pace
-Shivang Kumar,SRH,India,AR,N,30,,spin
-Rishabh Pant,LSG,India,WK,Y,200,Y,
-Abdul Samad,LSG,India,BAT,N,40,,
-Ayush Badoni,LSG,India,BAT,N,40,,spin
-Aiden Markram,LSG,South Africa,BAT,Y,200,,spin
-Mitchell Marsh,LSG,Australia,AR,Y,200,,pace
-Matthew Breetzke,LSG,South Africa,BAT,Y,100,,
-Nicholas Pooran,LSG,West Indies,WK,Y,200,Y,
-Himmat Singh,LSG,India,BAT,N,30,,
-Shahbaz Ahmed,LSG,India,AR,Y,100,,spin
-Arshin Kulkarni,LSG,India,AR,N,30,,pace
-Mayank Yadav,LSG,India,BWL,Y,150,,pace
-Avesh Khan,LSG,India,BWL,Y,200,,pace
-Mohsin Khan,LSG,India,BWL,N,30,,pace
-Digvesh Rathi,LSG,India,BWL,N,30,,spin
-M. Siddharth,LSG,India,BWL,N,30,,spin
-Prince Yadav,LSG,India,BWL,N,30,,pace
-Akash Singh,LSG,India,BWL,N,30,,pace
-Arjun Tendulkar,LSG,India,AR,N,30,,pace
-Mohammed Shami,LSG,India,BWL,Y,200,,pace
-Naman Tiwari,LSG,India,BWL,N,30,,pace
-Wanindu Hasaranga,LSG,Sri Lanka,AR,Y,200,,spin
-Josh Inglis,LSG,Australia,WK,Y,200,,
-Akshat Raghuwanshi,LSG,India,BAT,N,30,,
-Anrich Nortje,LSG,South Africa,BWL,Y,200,,pace
-Mukul Choudhary,LSG,India,BAT,N,30,,
-Axar Patel,DC,India,AR,Y,200,,spin
-KL Rahul,DC,India,WK,Y,200,Y,
-Tristan Stubbs,DC,South Africa,WK,Y,150,,
-Sameer Rizvi,DC,India,BAT,N,30,,
-Karun Nair,DC,India,BAT,Y,75,,
-Abishek Porel,DC,India,WK,N,30,,
-Ashutosh Sharma,DC,India,BAT,N,30,,
-Vipraj Nigam,DC,India,AR,N,30,,spin
-Madhav Tiwari,DC,India,AR,N,30,,pace
-Tripurana Vijay,DC,India,AR,N,30,,spin
-Ajay Mandal,DC,India,AR,N,30,,spin
-Kuldeep Yadav,DC,India,BWL,Y,200,,spin
-Mitchell Starc,DC,Australia,BWL,Y,200,Y,pace
-T. Natarajan,DC,India,BWL,Y,200,,pace
-Mukesh Kumar,DC,India,BWL,Y,200,,pace
-Dushmantha Chameera,DC,Sri Lanka,BWL,Y,75,,pace
-Nitish Rana,DC,India,BAT,Y,150,,spin
-Auqib Dar,DC,India,BWL,N,30,,pace
-Pathum Nissanka,DC,Sri Lanka,BAT,Y,75,,
-Kyle Jamieson,DC,New Zealand,AR,Y,200,,pace
-Lungisani Ngidi,DC,South Africa,BWL,Y,200,,pace
-Ben Duckett,DC,England,BAT,Y,200,,
-David Miller,DC,South Africa,BAT,Y,200,,
-Prithvi Shaw,DC,India,BAT,Y,75,,
-Sahil Parakh,DC,India,BAT,N,30,,
+name,team,country,role,capped,base_lakh,marquee,bowling,batting,retained,available,stats
+Aaqib Khan,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":22}"
+Aaron Varghese,,India,BAT,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":20}"
+Aarya Desai,,India,BAT,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""T20Is"":0,""Age"":23}"
+Abdul Bazith,,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""IPL matches"":1,""Age"":28}"
+Abdul Samad,LSG,India,BAT,N,40,,,,Y,Y,{}
+Abhilash Shetty,,India,BWL,N,30,,Left-arm Fast,Left-hand bat,N,Y,"{""Age"":28}"
+Abhimanyusingh Rajput,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":28}"
+Abhinandan Singh,RCB,India,BWL,N,30,,pace,,Y,Y,{}
+Abhinav Manohar,,India,BAT,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""T20Is"":26,""IPL matches"":null,""Age"":32}"
+Abhinav Tejrana,,India,BAT,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":25}"
+Abhishek Pathak,,India,WK,N,30,,,Right-hand bat,N,Y,"{""Age"":29}"
+Abhishek Sharma,SRH,India,AR,Y,200,,spin,,Y,Y,{}
+Abid Mushtaq,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""IPL matches"":0,""Age"":29}"
+Abishek Porel,DC,India,WK,N,30,,,,N,Y,{}
+Ackeem Auguste,,West Indies,BAT,Y,75,,Right-arm Leg Spin,Left-hand bat,N,Y,"{""ODIs"":4,""T20Is"":9,""Age"":23}"
+Adam Milne,RR,New Zealand,BWL,Y,200,,Right-arm Fast,Right-hand bat,N,Y,"{""ODIs"":50,""T20Is"":56,""IPL matches"":10,""Age"":34}"
+Adarsh Singh,,India,BAT,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":20}"
+Ahammed Imran,,India,BAT,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":20}"
+Aiden Markram,LSG,South Africa,BAT,Y,200,,spin,,Y,Y,{}
+Ajay Mandal,DC,India,AR,N,30,,spin,,N,Y,{}
+Ajinkya Rahane,KKR,India,BAT,Y,150,,,,N,Y,{}
+Ajitesh Guruswamy,,India,WK,N,30,,,Right-hand bat,N,Y,"{""Age"":24}"
+Akash Deep,KKR,India,BWL,Y,100,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":10,""T20Is"":14,""IPL matches"":null,""Age"":29}"
+Akash Madhwal,CSK,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""IPL matches"":15,""Age"":32}"
+Akash Pugazhanthi,,India,AR,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":22}"
+Akash Singh,LSG,India,BWL,N,30,,pace,,Y,Y,{}
+Akeal Hosein,CSK,West Indies,BWL,Y,200,,Left-arm Slow Orthodox,Left-hand bat,Y,Y,"{""ODIs"":40,""T20Is"":87,""IPL matches"":1,""Age"":33}"
+Akhil Scaria,,India,AR,N,30,,Right-arm Medium,Left-hand bat,N,Y,"{""Age"":28}"
+Akshat Raghuwanshi,LSG,India,BAT,N,30,,,Right-hand bat,Y,Y,"{""Age"":23}"
+Akshu Bajwa,,India,AR,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""Age"":20}"
+Alzarri Joseph,,West Indies,BWL,Y,200,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":40,""ODIs"":81,""T20Is"":45,""IPL matches"":22,""Age"":29}"
+AM Ghazanfar,MI,Afghanistan,BWL,Y,75,,spin,,N,Y,{}
+Aman Khan,CSK,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""IPL matches"":12,""Age"":29}"
+Aman Rao Perala,RR,India,BAT,N,30,,Right-arm Off Spin,Right-hand bat,Y,Y,"{""Age"":22}"
+Aman Shekhawat,,India,BWL,N,30,,Left-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":26}"
+Amit Kumar,SRH,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":24}"
+Angkrish Raghuvanshi,KKR,India,BAT,N,30,,,,Y,Y,{}
+Aniket Verma,SRH,India,BAT,N,30,,,,Y,Y,{}
+Ankit Kumar,,India,BAT,N,30,,,Left-hand bat,N,Y,"{""Age"":22}"
+Anmolpreet Singh,,India,BAT,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""T20Is"":9,""Age"":28}"
+Anrich Nortje,LSG,South Africa,BWL,Y,200,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":19,""ODIs"":22,""T20Is"":42,""IPL matches"":48,""Age"":33}"
+Anshul Kamboj,CSK,India,BWL,Y,75,,pace,,Y,Y,{}
+Anuj Rawat,GT,India,WK,N,30,,,,Y,Y,{}
+Anuj Thakral,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":24}"
+Anukul Roy,KKR,India,AR,N,30,,spin,,Y,Y,{}
+Arab Gul,,Afghanistan,BWL,N,40,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":21}"
+Arfaz Mohammad,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":25}"
+Arjun Tendulkar,LSG,India,AR,N,30,,pace,,Y,Y,{}
+Arpit Guleria,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""IPL matches"":0,""Age"":29}"
+Arpit Rana,,India,AR,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":23}"
+Arsh Kabir Ranga,,India,BAT,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":22}"
+Arshad Khan,GT,India,AR,N,30,,pace,,Y,Y,{}
+Arshdeep Singh,MI,India,BWL,Y,200,,pace,,Y,Y,{}
+Arshin Kulkarni,LSG,India,AR,N,30,,pace,,Y,Y,{}
+Aryaman Singh Dhaliwal,,India,AR,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""Age"":24}"
+Ashok Sharma,GT,India,BWL,N,30,,Right-arm Fast,Right-hand bat,Y,Y,"{""IPL matches"":0,""Age"":24}"
+Ashutosh Sharma,DC,India,BAT,N,30,,,,Y,Y,{}
+Ashwani Kumar,MI,India,BWL,N,30,,pace,,Y,Y,{}
+Atal Rai,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":27}"
+Atharva Ankolekar,MI,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":26}"
+Atharva Taide,,India,BAT,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""T20Is"":10,""IPL matches"":null,""Age"":26}"
+Atif Mushtaq,,India,BWL,N,30,,Right-arm Fast Medium,Left-hand bat,N,Y,"{""Age"":23}"
+Atit Sheth,,India,AR,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":30}"
+Auqib Dar,DC,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,Y,Y,"{""Age"":30}"
+Avesh Khan,LSG,India,BWL,Y,200,,pace,,N,Y,{}
+Axar Patel,DC,India,AR,Y,200,,spin,,Y,Y,{}
+Ayaz Khan,,India,BAT,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":24}"
+Ayush Badoni,LSG,India,BAT,N,40,,spin,,Y,Y,{}
+Ayush Doseja,,India,BAT,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":24}"
+Ayush Mhatre,CSK,India,BAT,N,30,,,,Y,Y,{}
+Ayush Vartak,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":22}"
+Azmatullah Omarzai,PBKS,Afghanistan,AR,Y,150,,pace,,Y,Y,{}
+Bailapudi Yeswanth,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":21}"
+Bal Krishna,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":27}"
+Bayanda Majola,,South Africa,BWL,N,30,,Right-arm Fast,Left-hand bat,N,Y,"{""Age"":19}"
+Beau Webster,,Australia,AR,Y,125,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Tests"":7,""Age"":32}"
+Ben Duckett,DC,England,WK,Y,200,,,Left-hand bat,N,Y,"{""Tests"":39,""ODIs"":31,""T20Is"":20,""Age"":32}"
+Ben Dwarshuis,PBKS,Australia,AR,Y,100,,Left-arm Fast Medium,Left-hand bat,Y,Y,"{""ODIs"":6,""T20Is"":13,""Age"":32}"
+Benjamin McDermott,,Australia,WK,Y,75,,,Right-hand bat,N,Y,"{""ODIs"":5,""T20Is"":25,""Age"":31}"
+Bevon-John Jacobs,,New Zealand,AR,Y,75,,Right-arm Medium,Right-hand bat,N,Y,"{""T20Is"":4,""IPL matches"":0,""Age"":24}"
+Bhanu Pania,,India,BAT,N,30,,,Right-hand bat,N,Y,"{""Age"":30}"
+Bhuvneshwar Kumar,RCB,India,BWL,Y,200,,pace,,Y,Y,{}
+Billy Stanlake,,Australia,BWL,Y,75,,Right-arm Fast,Right-hand bat,N,Y,"{""ODIs"":7,""T20Is"":19,""IPL matches"":6,""Age"":32}"
+Binura Fernando,,Sri Lanka,BWL,Y,75,,Left-arm Fast Medium,Right-hand bat,N,Y,"{""ODIs"":4,""T20Is"":25,""Age"":31}"
+Bipin Saurabh,,India,WK,N,30,,,Right-hand bat,N,Y,"{""Age"":26}"
+Blessing Muzarabani,KKR,Zimbabwe,BWL,Y,75,,Right-arm Fast,Right-hand bat,N,Y,{}
+Brijesh Sharma,RR,India,BWL,N,30,,Right-arm Fast,Right-hand bat,Y,Y,"{""Age"":27}"
+Brydon Carse,SRH,England,AR,Y,100,,pace,,Y,Y,{}
+C.Rakshann Readdi,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":26}"
+Cameron Green,KKR,Australia,BAT,Y,200,,Right-arm Fast,Right-hand bat,Y,Y,"{""Tests"":33,""ODIs"":31,""T20Is"":21,""IPL matches"":29,""Age"":27}"
+Charith Asalanka,,Sri Lanka,AR,Y,100,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Tests"":3,""ODIs"":80,""T20Is"":70,""IPL matches"":0,""Age"":29}"
+Chetan Sakariya,,India,BWL,Y,75,,Left-arm Medium,Left-hand bat,N,Y,"{""ODIs"":1,""T20Is"":1,""IPL matches"":20,""Age"":28}"
+Chintal Gandhi,,India,BWL,N,30,,Right-arm Leg Spin,Left-hand bat,N,Y,"{""Age"":32}"
+Connor Esterhuizen,GT,South Africa,WK,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":25}"
+Cooper Connolly,PBKS,Australia,AR,Y,200,,Left-arm Slow Orthodox,Left-hand bat,Y,Y,"{""Tests"":1,""ODIs"":8,""T20Is"":6,""Age"":23}"
+Corbin Bosch,MI,South Africa,AR,Y,75,,pace,,Y,Y,{}
+Daksh Kamra,KKR,India,AR,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":23}"
+Daniel Lategan,,England,BAT,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":20}"
+Daniel Lawrence,,England,AR,Y,200,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Tests"":14,""Age"":29}"
+Daniel Sams,,Australia,AR,Y,100,,Left-arm Fast Medium,Right-hand bat,N,Y,"{""T20Is"":10,""IPL matches"":16,""Age"":34}"
+Danish Malewar,MI,India,BAT,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":23}"
+Darshan Nalkande,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""IPL matches"":5,""Age"":28}"
+Daryl Mitchell,,New Zealand,AR,Y,200,,Right-arm Medium,Right-hand bat,N,Y,"{""Tests"":33,""ODIs"":56,""T20Is"":90,""IPL matches"":15,""Age"":35}"
+Dasun Shanaka,RR,Sri Lanka,AR,Y,75,,Right-arm Fast,Right-hand bat,Y,Y,"{""Tests"":6,""ODIs"":71,""T20Is"":118,""IPL matches"":3,""Age"":35}"
+David Miller,DC,South Africa,BAT,Y,200,,,Left-hand bat,Y,Y,"{""ODIs"":178,""T20Is"":130,""IPL matches"":141,""Age"":37}"
+David Payne,SRH,England,BWL,Y,75,,Left-arm Fast Medium,Right-hand bat,N,Y,{}
+Deepak Chahar,MI,India,BWL,Y,200,,pace,,N,Y,{}
+Deepak Hooda,,India,AR,Y,75,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Tests"":10,""ODIs"":21,""T20Is"":125,""IPL matches"":null,""Age"":31}"
+Deependra Singh,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":21}"
+Delano Potgieter,,South Africa,AR,N,30,,Right-arm Medium,Left-hand bat,N,Y,"{""Age"":30}"
+Devdutt Padikkal,RCB,India,BAT,Y,200,,,,Y,Y,{}
+Devon Conway,,New Zealand,BAT,Y,200,,,Left-hand bat,N,Y,"{""Tests"":29,""ODIs"":40,""T20Is"":62,""IPL matches"":29,""Age"":35}"
+Dewald Brevis,CSK,South Africa,BAT,Y,150,,spin,,Y,Y,{}
+Dharmendrasinh Jadeja,,India,BWL,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":36}"
+Dhruv Jurel,RR,India,WK,Y,150,,,,Y,Y,{}
+Dhurmil Matkar,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":30}"
+Dian Forrester,CSK,South Africa,AR,N,30,,Right-arm Medium,Left-hand bat,N,Y,"{""Age"":26}"
+Digvesh Rathi,LSG,India,BWL,N,30,,spin,,Y,Y,{}
+Dilshan Madushanka,SRH,Sri Lanka,BWL,Y,75,,Left-arm Fast Medium,Right-hand bat,N,Y,{}
+Divesh Sharma,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":25}"
+Donovan Ferreira,RR,South Africa,WK,Y,100,,,,Y,Y,{}
+Dunith Wellalage,,Sri Lanka,AR,Y,75,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Tests"":1,""ODIs"":31,""T20Is"":6,""Age"":23}"
+Dushmantha Chameera,DC,Sri Lanka,BWL,Y,75,,pace,,N,Y,{}
+Dwaine Pretorius,,South Africa,AR,Y,100,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Tests"":3,""ODIs"":27,""T20Is"":30,""IPL matches"":7,""Age"":37}"
+Edhen Tom,,India,AR,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":21}"
+Emanjot Chahal,RR,India,AR,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""Age"":22}"
+Esakkimuthu Ayyakutti,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":24}"
+Eshan Malinga,SRH,Sri Lanka,BWL,Y,75,,pace,,Y,Y,{}
+Fazalhaq Farooqi,,Afghanistan,BWL,Y,100,,Left-arm Fast Medium,Right-hand bat,N,Y,"{""ODIs"":42,""T20Is"":51,""IPL matches"":12,""Age"":26}"
+Finn Allen,KKR,New Zealand,WK,Y,200,,,Right-hand bat,Y,Y,"{""ODIs"":22,""T20Is"":52,""IPL matches"":0,""Age"":27}"
+George Garton,,England,AR,Y,75,,Left-arm Fast,Left-hand bat,N,Y,"{""T20Is"":1,""IPL matches"":5,""Age"":29}"
+George Linde,LSG,South Africa,AR,Y,100,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Tests"":3,""ODIs"":4,""T20Is"":25,""Age"":34}"
+Gerald Coetzee,SRH,South Africa,BWL,Y,200,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":4,""ODIs"":14,""T20Is"":13,""IPL matches"":14,""Age"":26}"
+Glenn Phillips,GT,New Zealand,AR,Y,200,,spin,,Y,Y,{}
+Gulbadin Naib,,Afghanistan,AR,Y,100,,Right-arm Medium,Right-hand bat,N,Y,"{""ODIs"":89,""T20Is"":78,""Age"":35}"
+Gurjapneet Singh,CSK,India,BWL,N,30,,pace,,Y,Y,{}
+Gurnoor Brar,GT,India,BWL,N,30,,pace,,Y,Y,{}
+Gus Atkinson,,England,AR,Y,200,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":14,""ODIs"":11,""T20Is"":4,""IPL matches"":0,""Age"":28}"
+Hardik Pandya,PBKS,India,AR,Y,200,,pace,,Y,Y,{}
+Hardik Raj,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":20}"
+Hardik Tamore,,India,WK,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":29}"
+Harnoor Pannu,PBKS,India,BAT,N,30,,,,Y,Y,{}
+Harpreet Brar,PBKS,India,AR,N,30,,spin,,Y,Y,{}
+Harsh Dubey,SRH,India,AR,N,30,,spin,,Y,Y,{}
+Harsh Tyagi,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":26}"
+Harshal Patel,GT,India,BWL,Y,200,,pace,,Y,Y,{}
+Harshit Rana,KKR,India,BWL,Y,150,,pace,,Y,Y,{}
+Heinrich Klaasen,SRH,South Africa,WK,Y,200,,,,Y,Y,{}
+Hemang Patel,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":27}"
+Himanshu Bisht,,India,AR,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":30}"
+Himanshu Sharma,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""IPL matches"":2,""Age"":28}"
+Himmat Singh,LSG,India,BAT,N,30,,,,N,Y,{}
+Hritik Shokeen,,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""IPL matches"":13,""Age"":26}"
+Irfan Umair,,India,BWL,N,30,,Left-arm Fast Medium,Left-hand bat,N,Y,"{""Age"":30}"
+Ishan Kishan,SRH,India,WK,Y,200,,,,Y,Y,{}
+Ishan Mulchandani,,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":26}"
+Ishan Porel,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""IPL matches"":1,""Age"":28}"
+Ishant Sharma,GT,India,BWL,Y,75,,pace,,N,Y,{}
+Izaz Sawariya,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":21}"
+Jack Edwards,CSK,Australia,AR,N,50,,Right-arm Fast Medium,Right-hand bat,Y,Y,"{""Age"":26}"
+Jacob Bethell,RCB,England,AR,Y,125,,spin,,N,Y,{}
+Jacob Duffy,RCB,New Zealand,BWL,Y,200,,Right-arm Fast Medium,Right-hand bat,Y,Y,"{""Tests"":1,""ODIs"":19,""T20Is"":38,""Age"":32}"
+Jagadeesha Suchith,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""IPL matches"":22,""Age"":32}"
+Jake Fraser-McGurk,,Australia,BAT,Y,200,,,Right-hand bat,N,Y,"{""ODIs"":7,""T20Is"":8,""IPL matches"":15,""Age"":24}"
+Jalaj Saxena,,India,AR,N,40,,Right-arm Off Spin,Right-hand bat,N,Y,"{""IPL matches"":1,""Age"":39}"
+Jamie Overton,CSK,England,AR,Y,150,,pace,,Y,Y,{}
+Jamie Smith,,England,WK,Y,200,,,Right-hand bat,N,Y,"{""Tests"":16,""ODIs"":19,""T20Is"":5,""Age"":26}"
+Jason Behrendorff,,Australia,BWL,Y,150,,Left-arm Fast Medium,Right-hand bat,N,Y,"{""ODIs"":12,""T20Is"":17,""IPL matches"":17,""Age"":36}"
+Jason Holder,GT,West Indies,AR,Y,200,,Right-arm Fast,Right-hand bat,Y,Y,"{""Tests"":69,""ODIs"":138,""T20Is"":86,""IPL matches"":46,""Age"":35}"
+Jasprit Bumrah,MI,India,BWL,Y,200,,pace,,Y,Y,{}
+Jayant Yadav,GT,India,AR,Y,75,,spin,,Y,Y,{}
+Jaydev Unadkat,SRH,India,BWL,Y,100,,pace,,N,Y,{}
+Jhathavedh Subramanyan,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""IPL matches"":0,""Age"":27}"
+Jhye Richardson,,Australia,BWL,Y,150,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":3,""ODIs"":15,""T20Is"":18,""IPL matches"":4,""Age"":30}"
+Jikku Bright,,India,BWL,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":29}"
+Jitesh Sharma,RCB,India,WK,Y,100,,,,Y,Y,{}
+Joe Clarke,,England,WK,N,50,,,Right-hand bat,N,Y,"{""Age"":30}"
+Jofra Archer,RR,England,BWL,Y,200,,pace,,Y,Y,{}
+Jonny Bairstow,,England,WK,Y,100,,,Right-hand bat,N,Y,"{""Tests"":100,""ODIs"":107,""T20Is"":80,""IPL matches"":52,""Age"":37}"
+Jordan Cox,RCB,England,WK,Y,75,,,Right-hand bat,Y,Y,"{""ODIs"":3,""T20Is"":6,""Age"":26}"
+Jos Buttler,GT,England,WK,Y,200,,,,Y,Y,{}
+Josh Hazlewood,RCB,Australia,BWL,Y,200,,pace,,Y,Y,{}
+Josh Inglis,LSG,Australia,WK,Y,200,,,Right-hand bat,Y,Y,"{""Tests"":3,""ODIs"":33,""T20Is"":41,""IPL matches"":11,""Age"":31}"
+Joshua Little,,Ireland,BWL,Y,75,,Left-arm Fast Medium,Right-hand bat,N,Y,"{""ODIs"":42,""T20Is"":74,""IPL matches"":11,""Age"":27}"
+Joshua Tongue,,England,BWL,Y,100,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":6,""Age"":29}"
+K.Ajay Singh,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":33}"
+K.C. Cariappa,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""IPL matches"":11,""Age"":32}"
+K.M Asif,,India,BWL,N,40,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""IPL matches"":7,""Age"":33}"
+K.S. Bharat,,India,WK,Y,75,,7,Right-hand bat,N,Y,"{""T20Is"":10,""Age"":33}"
+Kagiso Rabada,GT,South Africa,BWL,Y,200,,pace,,Y,Y,{}
+Kamindu Mendis,SRH,Sri Lanka,AR,Y,75,,spin,,N,Y,{}
+Kamlesh Nagarkoti,,India,AR,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""T20Is"":12,""IPL matches"":null,""Age"":26}"
+Kanishk Chouhan,RCB,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,Y,Y,"{""Age"":20}"
+Karan Lal,,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":26}"
+Karn Sharma,,India,BWL,N,50,,Right-arm Leg Spin,Left-hand bat,N,Y,"{""IPL matches"":90,""Age"":39}"
+Kartik Chadha,,India,BWL,N,30,,Right-arm Leg Spin,Left-hand bat,N,Y,"{""Age"":22}"
+Kartik Sharma,CSK,India,WK,N,30,,,Right-hand bat,Y,Y,"{""Age"":20}"
+Kartik Tyagi,KKR,India,BWL,N,30,,Right-arm Fast,Right-hand bat,Y,Y,"{""IPL matches"":20,""Age"":26}"
+Karun Nair,DC,India,BAT,Y,75,,,,N,Y,{}
+Keshav Maharaj,MI,South Africa,BWL,Y,100,,Left-arm Slow Orthodox,Right-hand bat,N,Y,{}
+Khaleel Ahmed,SRH,India,BWL,Y,200,,pace,,Y,Y,{}
+Khilan Patel,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":19}"
+KL Rahul,DC,India,WK,Y,200,,,,Y,Y,{}
+Krains Fuletra,SRH,India,AR,N,30,,Left-arm Slow Unorthodox,Right-hand bat,Y,Y,"{""Age"":22}"
+Krish Bhagat,MI,India,AR,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":22}"
+Krunal Pandya,RCB,India,AR,Y,200,,spin,,Y,Y,{}
+Kuldeep Sen,RR,India,BWL,Y,75,,Right-arm Fast,Right-hand bat,N,Y,"{""ODIs"":1,""IPL matches"":12,""Age"":30}"
+Kuldeep Yadav,LSG,India,BWL,Y,200,,spin,,Y,Y,{}
+Kuldip Yadav,CSK,India,BWL,N,30,,Left-arm Fast Medium,Left-hand bat,N,Y,"{""IPL matches"":3,""Age"":30}"
+Kulwant Khejroliya,GT,India,BWL,N,30,,Left-arm Fast Medium,Left-hand bat,N,Y,"{""IPL matches"":8,""Age"":34}"
+Kumar Kartikeya Singh,,India,BWL,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""IPL matches"":16,""Age"":28}"
+Kumar Kushagra,GT,India,WK,N,30,,,,Y,Y,{}
+Kunal Chandela,,India,BAT,N,30,,,Right-hand bat,N,Y,"{""Age"":32}"
+Kunal Rathore,,India,WK,N,30,,,Left-hand bat,N,Y,"{""IPL matches"":1,""Age"":24}"
+Kusal Mendis,,Sri Lanka,WK,Y,75,,,Right-hand bat,N,Y,"{""Tests"":73,""ODIs"":151,""T20Is"":94,""IPL matches"":1,""Age"":31}"
+Kusal Perera,,Sri Lanka,WK,Y,100,,,Left-hand bat,N,Y,"{""Tests"":22,""ODIs"":116,""T20Is"":93,""IPL matches"":2,""Age"":36}"
+Kwena Maphaka,RR,South Africa,BWL,Y,75,,pace,,N,Y,{}
+Kyle Jamieson,DC,New Zealand,BWL,Y,200,,Right-arm Fast,Right-hand bat,Y,Y,"{""Tests"":19,""ODIs"":20,""T20Is"":23,""IPL matches"":13,""Age"":31}"
+Kyle Mayers,,West Indies,AR,Y,125,,Right-arm Fast Medium,Left-hand bat,N,Y,"{""Tests"":18,""ODIs"":28,""T20Is"":41,""IPL matches"":13,""Age"":34}"
+Lalit Yadav,,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":29}"
+Lhuan-dre Pretorius,RR,South Africa,WK,Y,75,,,,Y,Y,{}
+Liam Dawson,,England,AR,Y,200,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""Tests"":4,""ODIs"":6,""T20Is"":21,""Age"":36}"
+Liam Livingstone,CSK,England,AR,Y,200,,Right-arm Leg Spin,Right-hand bat,Y,Y,"{""Tests"":1,""ODIs"":39,""T20Is"":60,""IPL matches"":49,""Age"":33}"
+Lockie Ferguson,PBKS,New Zealand,BWL,Y,200,,pace,,N,Y,{}
+Luckyrajsinh Vaghela,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":24}"
+Luke Wood,GT,England,BWL,Y,75,,Left-arm Fast,Left-hand bat,N,Y,"{""ODIs"":3,""T20Is"":14,""IPL matches"":2,""Age"":31}"
+Lungisani Ngidi,DC,South Africa,BWL,Y,200,,Right-arm Fast Medium,Right-hand bat,Y,Y,"{""Tests"":20,""ODIs"":73,""T20Is"":52,""IPL matches"":16,""Age"":30}"
+Luvnith Sisodia,KKR,India,WK,N,30,,,Left-hand bat,N,Y,{}
+M. Siddharth,RR,India,BWL,N,30,,spin,,Y,Y,{}
+M.Dheeraj Kumar,,India,BAT,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":27}"
+Macneil Noronha,CSK,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":25}"
+Madhav Bajaj,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":26}"
+Madhav Tiwari,DC,India,AR,N,30,,pace,,Y,Y,{}
+Maheesh Theekshana,,Sri Lanka,BWL,Y,200,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Tests"":2,""ODIs"":59,""T20Is"":71,""IPL matches"":38,""Age"":26}"
+Mahipal Lomror,MI,India,AR,N,50,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""T20Is"":40,""IPL matches"":null,""Age"":27}"
+Manan Bhardwaj,,India,BWL,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""Age"":22}"
+Manan Vohra,,India,BAT,N,30,,,Right-hand bat,N,Y,"{""IPL matches"":56,""Age"":33}"
+Manav Suthar,GT,India,BWL,N,30,,spin,,Y,Y,{}
+Mangesh Yadav,RCB,India,AR,N,30,,Left-arm Fast,Left-hand bat,N,Y,"{""Age"":24}"
+Manish Pandey,KKR,India,BAT,Y,75,,,,Y,Y,{}
+Manish Reddy,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":27}"
+Manoj Bhandage,,India,AR,N,30,,Right-arm Fast Medium,Left-hand bat,N,Y,"{""IPL matches"":1,""Age"":28}"
+Manvanth Kumar,,India,AR,N,30,,Right-arm Fast Medium,Left-hand bat,N,Y,"{""IPL matches"":0,""Age"":22}"
+Maramreddy Reddy,,India,AR,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":24}"
+Marco Jansen,PBKS,South Africa,AR,Y,200,,pace,,Y,Y,{}
+Marcus Stoinis,PBKS,Australia,AR,Y,200,,pace,,Y,Y,{}
+Matheesha Pathirana,KKR,Sri Lanka,BWL,Y,200,,Right-arm Fast,Right-hand bat,N,Y,"{""ODIs"":12,""T20Is"":21,""IPL matches"":32,""Age"":23}"
+Matt Henry,CSK,New Zealand,BWL,Y,200,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Tests"":32,""ODIs"":95,""T20Is"":31,""IPL matches"":6,""Age"":34}"
+Matthew Breetzke,LSG,South Africa,BAT,Y,100,,,,N,Y,{}
+Matthew Potts,,England,BWL,Y,75,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Tests"":10,""ODIs"":11,""T20Is"":1,""Age"":28}"
+Matthew Short,CSK,Australia,AR,Y,150,,Right-arm Off Spin,Right-hand bat,N,Y,"{""ODIs"":18,""T20Is"":21,""IPL matches"":6,""Age"":31}"
+Mayank Agarawal,,India,BAT,Y,75,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Tests"":21,""ODIs"":5,""IPL matches"":131,""Age"":35}"
+Mayank Dagar,,India,AR,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""IPL matches"":8,""Age"":30}"
+Mayank Gusain,,India,AR,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":25}"
+Mayank Markande,MI,India,BWL,Y,75,,spin,,N,Y,{}
+Mayank Rawat,MI,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":26}"
+Mayank Yadav,LSG,India,BWL,Y,150,,pace,,Y,Y,{}
+Md Shoriful Islam,,Bangladesh,BWL,Y,75,,Left-arm Fast Medium,Left-hand bat,N,Y,"{""Tests"":12,""ODIs"":40,""T20Is"":58,""Age"":25}"
+Michael Bracewell,,New Zealand,AR,Y,200,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Tests"":9,""ODIs"":40,""T20Is"":47,""IPL matches"":5,""Age"":35}"
+Miles Hammond,,India,BAT,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":30}"
+Mitchell Marsh,LSG,Australia,AR,Y,200,,pace,,Y,Y,{}
+Mitchell Owen,PBKS,Australia,AR,Y,150,,pace,,N,Y,{}
+Mitchell Santner,MI,New Zealand,AR,Y,200,,spin,,Y,Y,{}
+Mitchell Starc,DC,Australia,BWL,Y,200,,pace,,N,N,{}
+Mohamed Ali,,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":22}"
+Mohammad Izhar,MI,India,BWL,N,30,,Left-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":22}"
+Mohammad Waqar Salamkheil,,Afghanistan,BWL,Y,100,,Left-arm Slow Unorthodox,Right-hand bat,N,Y,"{""Tests"":1,""Age"":25}"
+Mohammed Shami,RR,India,BWL,Y,200,,pace,,Y,Y,{}
+Mohammed Siraj,GT,India,BWL,Y,200,,pace,,Y,Y,{}
+Mohit Rathee,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""IPL matches"":1,""Age"":27}"
+Mohsin Khan,LSG,India,BWL,N,30,,pace,,Y,Y,{}
+Money Grewal,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":26}"
+Mridul Surroch,,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":23}"
+MS Dhoni,CSK,India,WK,Y,200,,,,N,N,{}
+Muhammad Abbas,,New Zealand,AR,Y,75,,Left-arm Fast Medium,Right-hand bat,N,Y,"{""ODIs"":3,""Age"":22}"
+Muhammed Sharafuddeen,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":31}"
+Mujeeb Rahman,,Afghanistan,BWL,Y,200,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Tests"":1,""ODIs"":75,""T20Is"":58,""IPL matches"":20,""Age"":25}"
+Mukesh Choudhary,CSK,India,BWL,N,30,,pace,,Y,Y,{}
+Mukesh Kumar,DC,India,BWL,Y,200,,pace,,Y,Y,{}
+Mukul Choudhary,LSG,India,WK,N,30,,,Right-hand bat,Y,Y,"{""Age"":22}"
+Murugan Ashwin,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""IPL matches"":44,""Age"":36}"
+Musheer Khan,PBKS,India,AR,N,30,,spin,,Y,Y,{}
+Mustafizur Rahman,KKR,Bangladesh,BWL,Y,200,,Left-arm Fast Medium,Left-hand bat,N,Y,"{""Tests"":15,""ODIs"":116,""T20Is"":124,""IPL matches"":60,""Age"":31}"
+Nahid Rana,,Bangladesh,BWL,Y,75,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":10,""ODIs"":5,""T20Is"":1,""Age"":24}"
+Naman Dhir,MI,India,AR,N,30,,spin,,Y,Y,{}
+Naman Pushpak,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":19}"
+Naman Tiwari,LSG,India,BWL,N,30,,Left-arm Fast,Left-hand bat,N,Y,"{""Age"":21}"
+Nandre Burger,RR,South Africa,BWL,Y,125,,pace,,Y,Y,{}
+Nasir Lone,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":29}"
+Nathan Ellis,SRH,Australia,BWL,Y,200,,pace,,Y,Y,{}
+Nathan Smith,,New Zealand,AR,Y,75,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Tests"":3,""ODIs"":14,""Age"":28}"
+Navdeep Saini,KKR,India,BWL,Y,75,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":2,""ODIs"":8,""T20Is"":11,""IPL matches"":32,""Age"":33}"
+Naveen Ul Haq,,Afghanistan,BWL,Y,200,,Right-arm Medium,Right-hand bat,N,Y,"{""ODIs"":15,""T20Is"":48,""IPL matches"":18,""Age"":27}"
+Nehal Wadhera,PBKS,India,BAT,N,30,,,,N,Y,{}
+Nicholas Pooran,LSG,West Indies,WK,Y,200,,,,Y,Y,{}
+Nikhil Chaudhary,,India,AR,N,40,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":30}"
+Ninad Rathva,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":27}"
+Nishant Sindhu,GT,India,AR,N,30,,spin,,Y,Y,{}
+Nishanth Saranu,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":21}"
+Nitin Sai Yadav,,India,AR,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""Age"":22}"
+Nitish Kumar Reddy,SRH,India,AR,Y,200,,pace,,Y,Y,{}
+Nitish Rana,DC,India,BAT,Y,150,,spin,,N,Y,{}
+Noor Ahmad,CSK,Afghanistan,BWL,Y,200,,spin,,Y,Y,{}
+Nuwan Thushara,RCB,Sri Lanka,BWL,Y,75,,pace,,Y,Y,{}
+Obed McCoy,,West Indies,BWL,Y,75,,Left-arm Fast,Left-hand bat,N,Y,"{""ODIs"":2,""T20Is"":43,""IPL matches"":8,""Age"":29}"
+Olly Stone,,England,BWL,Y,125,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":5,""ODIs"":10,""T20Is"":1,""Age"":33}"
+Onkar Tarmale,SRH,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":24}"
+Pankaj Jaswal,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""IPL matches"":0,""Age"":31}"
+Parikshit Dhanak,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":23}"
+Parikshit Valsangkar,,India,AR,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":31}"
+Parth Rekhade,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":27}"
+Parth Vats,,India,AR,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""Age"":22}"
+Pat Cummins,SRH,Australia,BWL,Y,200,,pace,,Y,Y,{}
+Pathum Nissanka,DC,Sri Lanka,BAT,Y,75,,,Right-hand bat,N,Y,"{""Tests"":18,""ODIs"":74,""T20Is"":78,""Age"":28}"
+Phil Salt,RCB,England,WK,Y,200,,,,Y,Y,{}
+Prabhsimran Singh,PBKS,India,WK,N,30,,,,Y,Y,{}
+Praful Hinge,SRH,India,BWL,N,30,,Right-arm Fast,Right-hand bat,Y,Y,"{""Age"":24}"
+Prashant Solanki,KKR,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,Y,Y,"{""IPL matches"":2,""Age"":26}"
+Prashant Veer,CSK,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":20}"
+Prasidh Krishna,GT,India,BWL,Y,200,,pace,,Y,Y,{}
+Pravin Dubey,PBKS,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""IPL matches"":5,""Age"":33}"
+Prerit Dutta,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":28}"
+Prince Rai,,India,AR,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""IPL matches"":0,""Age"":27}"
+Prince Yadav,LSG,India,BWL,N,30,,pace,,Y,Y,{}
+Prithvi Shaw,DC,India,BAT,Y,75,,5,Right-hand bat,Y,Y,"{""Tests"":6,""ODIs"":1,""T20Is"":79,""Age"":27}"
+Prithviraj Yarra,GT,India,BWL,N,30,,Left-arm Fast,Left-hand bat,N,Y,"{""IPL matches"":2,""Age"":28}"
+Priyansh Arya,PBKS,India,BAT,N,30,,,,Y,Y,{}
+Pukhraj Mann,,India,BAT,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":25}"
+Purav Agarwal,,India,BWL,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":23}"
+PV.Satyanarayana Raju,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""IPL matches"":2,""Age"":27}"
+Pyla Avinash,PBKS,India,BAT,N,30,,,,N,Y,{}
+Qais Ahmad,,Afghanistan,BWL,Y,75,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Tests"":2,""ODIs"":3,""T20Is"":12,""Age"":26}"
+Qamran Iqbal,,India,BAT,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":25}"
+Quinton de Kock,MI,South Africa,WK,Y,100,,,Left-hand bat,Y,Y,"{""Tests"":54,""ODIs"":161,""T20Is"":96,""IPL matches"":115,""Age"":33}"
+R Rajkumar,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":33}"
+R.S Ambrish,SRH,India,AR,N,30,,Right-arm Fast Medium,Left-hand bat,N,Y,"{""Age"":19}"
+R.Sonu Yadav,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":27}"
+Rachin Ravindra,KKR,New Zealand,AR,Y,200,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Tests"":17,""ODIs"":39,""T20Is"":38,""IPL matches"":18,""Age"":26}"
+Raghav Goyal,,India,AR,N,30,,Left-arm Slow Unorthodox,Left-hand bat,N,Y,"{""IPL matches"":1,""Age"":25}"
+Raghu Sharma,MI,India,BWL,N,30,,spin,,Y,Y,{}
+Rahmanullah Gurbaz,,Afghanistan,WK,Y,150,,,Right-hand bat,N,Y,"{""Tests"":2,""ODIs"":52,""T20Is"":80,""IPL matches"":19,""Age"":24}"
+Rahul Buddhi,,India,WK,N,30,,Right-arm Leg Spin,Left-hand bat,N,Y,"{""IPL matches"":0,""Age"":29}"
+Rahul Chahar,CSK,India,BWL,Y,100,,Right-arm Leg Spin,Right-hand bat,Y,Y,"{""Tests"":1,""ODIs"":6,""T20Is"":80,""IPL matches"":null,""Age"":27}"
+Rahul Tewatia,GT,India,AR,N,50,,spin,,Y,Y,{}
+Rahul Tripathi,KKR,India,BAT,Y,75,,Right-arm Medium,Right-hand bat,N,Y,"{""T20Is"":5,""IPL matches"":100,""Age"":35}"
+Raj Bawa,MI,India,AR,N,30,,pace,,Y,Y,{}
+Raj Limbani,,India,BWL,N,30,,Right-arm Fast Medium,Left-hand bat,N,Y,"{""Age"":21}"
+Rajan Kumar,,India,BWL,N,30,,Left-arm Fast,Left-hand bat,N,Y,"{""Age"":30}"
+Rajat Patidar,RCB,India,BAT,Y,200,,,,Y,Y,{}
+Rajat Verma,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":28}"
+Rajvardhan Hangargekar,,India,AR,N,40,,Right-arm Fast,Right-hand bat,N,Y,"{""T20Is"":2,""IPL matches"":null,""Age"":24}"
+Rakibul Hasan,,Bangladesh,BWL,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":24}"
+Ramakrishna Ghosh,CSK,India,AR,N,30,,pace,,Y,Y,{}
+Ramandeep Singh,KKR,India,AR,Y,75,,pace,,Y,Y,{}
+Rashid Khan,GT,Afghanistan,BWL,Y,200,,spin,,Y,Y,{}
+Rasikh Salam,RCB,India,BWL,N,30,,pace,,Y,Y,{}
+Ravi Bishnoi,RR,India,BWL,Y,200,,Right-arm Leg Spin,Right-hand bat,Y,Y,"{""Tests"":1,""ODIs"":42,""T20Is"":77,""IPL matches"":null,""Age"":26}"
+Ravi Kumar,,India,BWL,N,30,,Left-arm Medium,Left-hand bat,N,Y,"{""Age"":23}"
+Ravi Singh,RR,India,WK,N,30,,,Left-hand bat,N,Y,"{""Age"":25}"
+Ravindra Jadeja,RR,India,AR,Y,200,,spin,,Y,Y,{}
+Reeza Hendricks,,South Africa,BAT,Y,100,,Right-arm Off Spin,Right-hand bat,N,Y,"{""ODIs"":38,""T20Is"":87,""Age"":37}"
+Rehan Ahmed,DC,England,AR,Y,75,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Tests"":5,""ODIs"":6,""T20Is"":12,""Age"":22}"
+Richard Gleeson,RCB,England,BWL,Y,75,,Right-arm Fast,Right-hand bat,N,Y,"{""T20Is"":6,""IPL matches"":3,""Age"":38}"
+Ricky Bhui,,India,WK,N,30,,,Right-hand bat,N,Y,"{""IPL matches"":4,""Age"":30}"
+Riley Meredith,,Australia,BWL,Y,150,,Right-arm Fast,Right-hand bat,N,Y,"{""ODIs"":1,""T20Is"":6,""IPL matches"":18,""Age"":30}"
+Rinku Singh,KKR,India,BAT,Y,200,,,,Y,Y,{}
+Ripal Patel,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""IPL matches"":9,""Age"":31}"
+Rishabh Chauhan,,India,AR,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""Age"":27}"
+Rishabh Pant,DC,India,WK,Y,200,,,,Y,Y,{}
+Rishad Hossain,,Bangladesh,BWL,Y,75,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""ODIs"":14,""T20Is"":54,""Age"":24}"
+Ritik Tada,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":24}"
+Riyan Parag,RR,India,AR,Y,150,,spin,,Y,Y,{}
+Robin Minz,MI,India,WK,N,30,,,,N,Y,{}
+Rohan Kunnummal,,India,BAT,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":28}"
+Rohit Sharma,MI,India,BAT,Y,200,,,,Y,Y,{}
+Rohit Yadav,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":26}"
+Romario Shepherd,RCB,West Indies,AR,Y,150,,pace,,Y,Y,{}
+Roshan Wagshare,,India,BWL,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""Age"":23}"
+Roston Chase,,West Indies,AR,Y,125,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Tests"":54,""ODIs"":69,""T20Is"":49,""Age"":34}"
+Rovman Powell,KKR,West Indies,BAT,Y,150,,pace,,Y,Y,{}
+Ruchit Ahir,MI,India,WK,N,30,,,Right-hand bat,N,Y,"{""Age"":26}"
+Ruturaj Gaikwad,CSK,India,BAT,Y,200,,,,Y,Y,{}
+Ryan Rickelton,MI,South Africa,WK,Y,100,,,,Y,Y,{}
+Sabir Khan,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":25}"
+Sachin Dhas,,India,BAT,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":21}"
+Sadek Hussain,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":25}"
+Safvan Patel,,India,BWL,N,30,,Left-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":28}"
+Sagar Solanki,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":26}"
+Sahil Parakh,DC,India,BAT,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":19}"
+Sai Kishore,GT,India,BWL,Y,75,,spin,,Y,Y,{}
+Sai Sudharsan,GT,India,BAT,Y,200,,,,Y,Y,{}
+Sairaj Patil,,India,AR,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":30}"
+Sakib Hussain,SRH,India,BWL,N,30,,Right-arm Fast,Right-hand bat,Y,Y,"{""IPL matches"":0,""Age"":21}"
+Salil Arora,SRH,India,WK,N,30,,,Right-hand bat,Y,Y,"{""Age"":24}"
+Salman Nizar,,India,BAT,N,30,,,Left-hand bat,N,Y,"{""Age"":29}"
+Sam Curran,LSG,England,AR,Y,200,,pace,,Y,Y,{}
+Sameer Rizvi,DC,India,BAT,N,30,,,,Y,Y,{}
+Sammar Gajjar,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":23}"
+Sandeep Sharma,RR,India,BWL,Y,75,,pace,,Y,Y,{}
+Sandeep Warrier,,India,BWL,Y,75,,Right-arm Fast,Right-hand bat,N,Y,"{""IPL matches"":10,""Age"":35}"
+Sanjay Yadav,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""IPL matches"":1,""Age"":31}"
+Sanju Samson,CSK,India,WK,Y,200,,,,Y,Y,{}
+Sanvir Singh,,India,AR,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""T20Is"":6,""Age"":30}"
+Saqib Mahmood,,England,BWL,Y,150,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":2,""ODIs"":17,""T20Is"":19,""Age"":29}"
+Sarfaraz Khan,CSK,India,BAT,Y,75,,Right-arm Leg Spin,Right-hand bat,Y,Y,"{""Tests"":6,""T20Is"":50,""Age"":29}"
+Sarthak Ranjan,KKR,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,Y,Y,"{""Age"":30}"
+Satvik Deswal,RCB,India,AR,N,30,,Left-arm Slow Unorthodox,Right-hand bat,N,Y,"{""Age"":19}"
+Saumy Pandey,,India,BWL,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":22}"
+Saurabh Dubey,KKR,India,BWL,N,30,,Left-arm Fast Medium,Right-hand bat,Y,Y,{}
+Saurav Chuahan,,India,WK,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""IPL matches"":3,""Age"":26}"
+Sayan Ghosh,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""IPL matches"":0,""Age"":34}"
+Sayed Irfan Aftab,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":22}"
+Sean Abbott,,Australia,AR,Y,200,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""ODIs"":29,""T20Is"":28,""IPL matches"":3,""Age"":34}"
+Sediqullah Atal,,Afghanistan,BAT,Y,75,,,Left-hand bat,N,Y,"{""Tests"":1,""ODIs"":12,""T20Is"":22,""IPL matches"":1,""Age"":25}"
+Shahbaz Ahmed,LSG,India,AR,Y,100,,spin,,Y,Y,{}
+Shahrukh Khan,GT,India,BAT,N,40,,,,N,Y,{}
+Shai Hope,,West Indies,WK,Y,200,,,Right-hand bat,N,Y,"{""Tests"":43,""ODIs"":148,""T20Is"":58,""IPL matches"":9,""Age"":33}"
+Shamar Joseph,,West Indies,BWL,Y,75,,Right-arm Fast,Left-hand bat,N,Y,"{""Tests"":11,""ODIs"":6,""T20Is"":12,""IPL matches"":1,""Age"":27}"
+Shams Mulani,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""IPL matches"":2,""Age"":29}"
+Shardul Thakur,MI,India,AR,Y,200,,pace,,Y,Y,{}
+Shashank Singh,PBKS,India,BAT,N,30,,,,Y,Y,{}
+Sherfane Rutherford,MI,West Indies,BAT,Y,150,,pace,,Y,Y,{}
+Shimron Hetmyer,RR,West Indies,BAT,Y,200,,,,N,Y,{}
+Shiva Singh,,India,AR,N,30,,Left-arm Slow Unorthodox,Right-hand bat,N,Y,"{""Age"":27}"
+Shivalik Sharma,,India,AR,N,30,,Right-arm Leg Spin,Left-hand bat,N,Y,"{""Age"":27}"
+Shivam Dube,CSK,India,AR,Y,200,,pace,,Y,Y,{}
+Shivam Mavi,SRH,India,BWL,Y,75,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""ODIs"":6,""T20Is"":32,""Age"":27}"
+Shivam Shukla,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":30}"
+Shivang Kumar,SRH,India,AR,N,30,,Left-arm Slow Unorthodox,Right-hand bat,Y,Y,"{""Age"":24}"
+Shreevatsha Acharya,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":24}"
+Shreyan Chakraborty,,India,AR,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""Age"":30}"
+Shreyas Chavan,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":23}"
+Shreyas Gopal,CSK,India,BWL,N,30,,spin,,Y,Y,{}
+Shreyas Iyer,PBKS,India,BAT,Y,200,,,,Y,Y,{}
+Shubham Agrawal,,India,BWL,N,40,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":32}"
+Shubham Dubey,RR,India,BAT,N,30,,,,Y,Y,{}
+Shubham Kapse,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":32}"
+Shubham Rana,,India,AR,N,30,,Left-arm Slow Unorthodox,Left-hand bat,N,Y,"{""Age"":20}"
+Shubhang Hegde,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""Age"":25}"
+Shubman Gill,GT,India,BAT,Y,200,,,,Y,Y,{}
+Siddhant Rana,,India,BAT,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":25}"
+Siddharth Joon,,India,WK,N,30,,,Left-hand bat,N,Y,"{""Age"":20}"
+Siddharth Yadav,,India,AR,N,30,,Right-arm Fast Medium,Left-hand bat,N,Y,"{""Age"":23}"
+Simarjeet Singh,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""IPL matches"":14,""Age"":28}"
+Smaran Ravichandran,SRH,India,BAT,N,30,,,,Y,Y,{}
+Spencer Johnson,CSK,Australia,BWL,Y,150,,Left-arm Fast,Left-hand bat,N,Y,"{""ODIs"":5,""T20Is"":8,""IPL matches"":9,""Age"":30}"
+Srihari Nair,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":24}"
+Steve Smith,,Australia,BAT,Y,200,,,Right-hand bat,N,Y,"{""Tests"":120,""ODIs"":170,""T20Is"":67,""IPL matches"":103,""Age"":37}"
+Sunil Kumar,,India,BWL,N,30,,Left-arm Fast Medium,Left-hand bat,N,Y,"{""Age"":29}"
+Sunil Narine,KKR,West Indies,AR,Y,200,,spin,,Y,Y,{}
+Sunny Sandhu,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":23}"
+Suryakumar Yadav,MI,India,BAT,Y,200,,,,Y,Y,{}
+Suryansh Shedge,PBKS,India,AR,N,30,,pace,,Y,Y,{}
+Sushant Mishra,RR,India,BWL,N,30,,Left-arm Fast,Left-hand bat,Y,Y,"{""IPL matches"":0,""Age"":25}"
+Suyash Prabhudessai,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""IPL matches"":11,""Age"":28}"
+Suyash Sharma,RCB,India,BWL,N,30,,spin,,Y,Y,{}
+Swapnil Singh,RCB,India,AR,N,30,,spin,,N,Y,{}
+T. Natarajan,SRH,India,BWL,Y,200,,pace,,Y,Y,{}
+Tanay Thyagarajann,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""IPL matches"":0,""Age"":31}"
+Tanush Kotian,,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""T20Is"":1,""Age"":28}"
+Tanzim Hasan Sakib,,Bangladesh,BWL,Y,75,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Tests"":1,""ODIs"":15,""T20Is"":39,""Age"":24}"
+Taskin Ahmed,,Bangladesh,BWL,Y,75,,Right-arm Fast,Left-hand bat,N,Y,"{""Tests"":17,""ODIs"":83,""T20Is"":86,""Age"":31}"
+Tejas Baroka,,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""IPL matches"":1,""Age"":30}"
+Tejasvi Singh,KKR,India,WK,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":24}"
+Tiaan Van Vuuren,,South Africa,AR,N,30,,Left-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":25}"
+Tilak Varma,MI,India,BAT,Y,200,,spin,,Y,Y,{}
+Tim David,RCB,Australia,BAT,Y,200,,,,Y,Y,{}
+Tim Robinson,,New Zealand,BAT,Y,75,,Right-arm Medium,Right-hand bat,N,Y,"{""ODIs"":3,""T20Is"":24,""Age"":24}"
+Tim Seifert,KKR,New Zealand,WK,Y,150,,,Right-hand bat,Y,Y,"{""ODIs"":4,""T20Is"":77,""IPL matches"":3,""Age"":31}"
+Tom Banton,GT,England,WK,Y,200,,,Right-hand bat,Y,Y,"{""ODIs"":7,""T20Is"":24,""IPL matches"":2,""Age"":28}"
+Tom Curran,,England,AR,Y,200,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":2,""ODIs"":28,""T20Is"":30,""IPL matches"":13,""Age"":31}"
+Tom Moores,,England,WK,N,40,,,Left-hand bat,N,Y,"{""Age"":30}"
+Traveen Mathew,,Sri Lanka,BWL,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":22}"
+Travis Head,SRH,Australia,BAT,Y,200,,,,N,N,{}
+Trent Boult,MI,New Zealand,BWL,Y,200,,pace,,N,Y,{}
+Tripurana Vijay,DC,India,AR,N,30,,spin,,Y,Y,{}
+Tristan Luus,,South Africa,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":21}"
+Tristan Stubbs,DC,South Africa,WK,Y,150,,,,Y,Y,{}
+Tushar Deshpande,RR,India,BWL,Y,100,,pace,,N,Y,{}
+Tushar Raheja,,India,WK,N,30,,,Left-hand bat,N,Y,"{""Age"":25}"
+Umesh Yadav,,India,BWL,Y,150,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Tests"":57,""ODIs"":75,""T20Is"":9,""IPL matches"":148,""Age"":39}"
+Umran Malik,KKR,India,BWL,Y,75,,pace,,N,Y,{}
+Urvil Patel,CSK,India,WK,N,30,,,,Y,Y,{}
+Utkarsh Singh,,India,AR,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""IPL matches"":0,""Age"":28}"
+Vaibhav Arora,KKR,India,BWL,N,30,,pace,,Y,Y,{}
+Vaibhav Suryavanshi,RR,India,BAT,N,30,,,,Y,Y,{}
+Vansh Bedi,,India,WK,N,30,,,Right-hand bat,N,Y,"{""T20Is"":0,""IPL matches"":null,""Age"":23}"
+Varun Chakravarthy,KKR,India,BWL,Y,200,,spin,,Y,Y,{}
+Varun Raj Singh Bisht,,India,AR,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":22}"
+Venkatesh Iyer,RCB,India,AR,Y,200,,Right-arm Medium,Left-hand bat,Y,Y,"{""Tests"":2,""ODIs"":9,""T20Is"":62,""IPL matches"":null,""Age"":31}"
+Vicky Ostwal,RCB,India,AR,N,30,,Left-arm Slow Orthodox,Right-hand bat,Y,Y,"{""IPL matches"":0,""Age"":24}"
+Vidwath Kaverappa,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""IPL matches"":1,""Age"":27}"
+Vidyadhar Patil,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":26}"
+Vignesh Puthur,RR,India,BWL,N,30,,Left-arm Slow Unorthodox,Right-hand bat,N,Y,"{""IPL matches"":5,""Age"":25}"
+Vihaan Malhotra,RCB,India,AR,N,30,,Right-arm Off Spin,Left-hand bat,N,Y,"{""Age"":19}"
+Vijay Kumar,,India,BWL,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Age"":20}"
+Vijay Shankar,,India,AR,N,30,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""T20Is"":78,""IPL matches"":null,""Age"":35}"
+Vipraj Nigam,DC,India,AR,N,30,,spin,,Y,Y,{}
+Virat Kohli,RCB,India,BAT,Y,200,,,,Y,Y,{}
+Vishal Mandwal,,India,AR,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":29}"
+Vishal Nishad,PBKS,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Age"":21}"
+Vishnu Solanki,,India,WK,N,30,,,Right-hand bat,N,Y,"{""Age"":34}"
+Vishnu Vinod,PBKS,India,WK,N,30,,,,Y,Y,{}
+Vishvarajsinh Jadeja,,India,BAT,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":28}"
+Vivrant Sharma,,India,AR,N,30,,Right-arm Leg Spin,Left-hand bat,N,Y,"{""IPL matches"":2,""Age"":27}"
+Viyaskanth Vijayakanth,,Sri Lanka,BWL,Y,75,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""T20Is"":2,""IPL matches"":3,""Age"":24}"
+Vyshak Vijaykumar,PBKS,India,BWL,N,30,,pace,,Y,Y,{}
+Wahidullah Zadran,,Afghanistan,BWL,N,30,,Right-arm Off Spin,Right-hand bat,N,Y,"{""Age"":19}"
+Wanindu Hasaranga,LSG,Sri Lanka,AR,Y,200,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""Tests"":4,""ODIs"":68,""T20Is"":90,""IPL matches"":37,""Age"":29}"
+Waseem Khanday,,India,BWL,N,30,,Right-arm Fast,Right-hand bat,N,Y,"{""Age"":26}"
+Washington Sundar,GT,India,AR,Y,200,,spin,,Y,Y,{}
+Wesley Agar,,Australia,BWL,Y,75,,Right-arm Fast,Right-hand bat,N,Y,"{""ODIs"":2,""Age"":29}"
+Wiaan Mulder,,South Africa,AR,Y,100,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Tests"":24,""ODIs"":30,""T20Is"":11,""IPL matches"":1,""Age"":28}"
+Will Jacks,MI,England,AR,Y,200,,spin,,Y,Y,{}
+William Orourke,,New Zealand,BWL,Y,200,,Right-arm Fast,Right-hand bat,N,Y,"{""Tests"":11,""ODIs"":17,""T20Is"":7,""IPL matches"":3,""Age"":25}"
+William Sutherland,,Australia,AR,Y,100,,Right-arm Fast,Right-hand bat,N,Y,"{""ODIs"":2,""Age"":27}"
+Xavier Bartlett,PBKS,Australia,BWL,Y,75,,pace,,Y,Y,{}
+Yash Dayal,RCB,India,BWL,N,30,,pace,,Y,Y,{}
+Yash Dhull,,India,BAT,N,30,,Right-arm Leg Spin,Right-hand bat,N,Y,"{""T20Is"":4,""Age"":24}"
+Yash Dicholkar,,India,BWL,N,30,,Left-arm Slow Orthodox,Right-hand bat,N,Y,"{""Age"":30}"
+Yash Raj Punja,RR,India,BWL,N,30,,Right-arm Leg Spin,Right-hand bat,Y,Y,"{""Age"":20}"
+Yash Thakur,PBKS,India,BWL,N,30,,pace,,Y,Y,{}
+Yashasvi Jaiswal,RR,India,BAT,Y,200,,,,Y,Y,{}
+Yashvardhan Dalal,,India,WK,N,30,,,Right-hand bat,N,Y,"{""Age"":21}"
+Yudhvir Singh Charak,RR,India,AR,N,30,,pace,,N,Y,{}
+Yuvraj Chaudhary,,India,AR,N,30,,Left-arm Slow Orthodox,Left-hand bat,N,Y,"{""IPL matches"":0,""Age"":25}"
+Yuzvendra Chahal,PBKS,India,BWL,Y,200,,spin,,Y,Y,{}
+Zak Foulkes,CSK,New Zealand,AR,Y,75,,Right-arm Fast Medium,Right-hand bat,N,Y,"{""Tests"":1,""ODIs"":6,""T20Is"":17,""Age"":24}"
+Zeeshan Ansari,DC,India,BWL,N,30,,spin,,Y,Y,{}

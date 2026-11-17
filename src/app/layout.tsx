@@ -10,7 +10,7 @@ const display = Barlow_Condensed({ variable: "--font-display", subsets: ["latin"
 
 export const metadata: Metadata = {
   title: { default: "AuctionArena", template: "%s · AuctionArena" },
-  description: "Run a live IPL-style player auction with your friends: real-time bidding, voice chat and a virtual auctioneer.",
+  description: "Run the IPL 2027 mini auction with your friends: real retained squads and purses, live bidding, voice chat and a virtual auctioneer.",
 };
 
 export const viewport: Viewport = {

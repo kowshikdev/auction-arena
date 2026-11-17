@@ -41,16 +41,25 @@ export async function testUser(n: number): Promise<TestUser> {
 
 type RpcResult = Record<string, any>;
 
+/** Retries only when the request never reached the server (transport failure). */
+async function call(user: TestUser, fn: string, args: Record<string, unknown>) {
+  for (let attempt = 1; ; attempt++) {
+    const result = await user.client.rpc(fn, args);
+    if (!result.error?.message.includes("fetch failed") || attempt === 3) return result;
+    await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
+  }
+}
+
 /** Calls an RPC and returns its JSON, throwing the server's error code on failure. */
 export async function rpc(user: TestUser, fn: string, args: Record<string, unknown> = {}): Promise<RpcResult> {
-  const { data, error } = await user.client.rpc(fn, args);
+  const { data, error } = await call(user, fn, args);
   if (error) throw new Error(error.message);
   return data as RpcResult;
 }
 
 /** Calls an RPC expected to fail and returns the error code (or "OK" if it succeeded). */
 export async function rpcCode(user: TestUser, fn: string, args: Record<string, unknown> = {}): Promise<string> {
-  const { error } = await user.client.rpc(fn, args);
+  const { error } = await call(user, fn, args);
   return error ? error.message : "OK";
 }
 

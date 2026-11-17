@@ -110,9 +110,10 @@ describe("bidding (human auctioneer drives the flow)", () => {
     await rpc(a, "auctioneer_action", { p_room_id: roomId, p_action: "sold" });
     state = await rpc(a, "get_room_state", { p_code: code });
     const team = state.teams.find((t: any) => t.franchise_id === winner);
+    const retainedCount = state.squads.filter((s: any) => s.franchise_id === winner && s.is_retained).length;
     expect(team.purse_remaining_lakh).toBe(team.purse_initial_lakh - next);
-    expect(team.squad_count).toBe(1);
-    expect(state.squads).toHaveLength(1);
+    expect(team.squad_count).toBe(retainedCount + 1);
+    expect(state.squads.filter((s: any) => !s.is_retained)).toHaveLength(1);
     expect(state.lots.find((l: any) => l.id === lotId)).toMatchObject({ status: "sold", sold_to: winner, sold_price_lakh: next });
     // The closed lot cannot be bid on again.
     expect(await rpcCode(b, "place_bid", { p_room_id: roomId, p_lot_id: lotId, p_amount_lakh: next + 20, p_idempotency_key: key() })).toBe("BIDDING_CLOSED");
@@ -150,9 +151,9 @@ describe("bidding (human auctioneer drives the flow)", () => {
 
   it("never lets a franchise spend more than its purse", async () => {
     const owners = users.slice(0, 4);
-    const [a, b] = owners;
-    // 10 crore purse, no minimum-squad reserve, so the raw purse limit is what stops the bid.
-    const { roomId, code } = await seatedRoom(owners, { settings: { purse_lakh: 1000, squad_min: 1 } });
+    const [a, , c, d] = owners;
+    // RCB (₹14.15 Cr, 20 retained) has no minimum-squad reserve, so its purse is what stops it.
+    const { roomId, code } = await seatedRoom(owners);
     await rpc(a, "start_auction", { p_room_id: roomId });
     await rpc(a, "auctioneer_action", { p_room_id: roomId, p_action: "present_next" });
 
@@ -163,7 +164,7 @@ describe("bidding (human auctioneer drives the flow)", () => {
     let amount = state.session.next_bid_lakh as number;
     // Two owners trade bids until one runs out of money. Each accepted bid returns the next amount.
     while (lastCode === "OK" && turn < 200) {
-      const bidder = turn % 2 === 0 ? a : b;
+      const bidder = turn % 2 === 0 ? c : d;
       const { data, error } = await bidder.client.rpc("place_bid", {
         p_room_id: roomId, p_lot_id: lotId, p_amount_lakh: amount, p_idempotency_key: key(),
       });
@@ -173,7 +174,7 @@ describe("bidding (human auctioneer drives the flow)", () => {
     }
     expect(lastCode).toBe("INSUFFICIENT_PURSE");
     state = await rpc(a, "get_room_state", { p_code: code });
-    expect(state.session.current_bid_lakh).toBeLessThanOrEqual(1000);
+    expect(state.session.current_bid_lakh).toBeLessThanOrEqual(1415);
 
     await rpc(a, "auctioneer_action", { p_room_id: roomId, p_action: "sold" });
     state = await rpc(a, "get_room_state", { p_code: code });
@@ -245,16 +246,80 @@ describe("bidding (human auctioneer drives the flow)", () => {
 
     const state = await rpc(a, "get_room_state", { p_code: code });
     expect(state.room.status).toBe("completed");
-    expect(state.squads).toHaveLength(4);
+    const auctioned = state.squads.filter((s: any) => !s.is_retained);
+    expect(auctioned).toHaveLength(4);
     for (const team of state.teams) {
-      const bought = state.squads.filter((s: any) => s.franchise_id === team.franchise_id);
+      const bought = auctioned.filter((s: any) => s.franchise_id === team.franchise_id);
+      const retained = state.squads.filter((s: any) => s.franchise_id === team.franchise_id && s.is_retained);
       const spent = bought.reduce((sum: number, s: any) => sum + s.price_lakh, 0);
       expect(bought).toHaveLength(1);
-      expect(team.squad_count).toBe(1);
+      expect(team.squad_count).toBe(retained.length + 1);
       expect(team.purse_initial_lakh - team.purse_remaining_lakh).toBe(spent);
     }
     // No player was sold twice.
-    expect(new Set(state.squads.map((s: any) => s.player_id)).size).toBe(4);
+    expect(new Set(auctioned.map((s: any) => s.player_id)).size).toBe(4);
+  });
+});
+
+describe("passing", () => {
+  it("lets a franchise that passed come back and bid on the same player", async () => {
+    const owners = users.slice(0, 4);
+    const [a, b, c] = owners;
+    const { roomId, code } = await seatedRoom(owners);
+    await rpc(a, "start_auction", { p_room_id: roomId });
+    await rpc(a, "auctioneer_action", { p_room_id: roomId, p_action: "present_next" });
+    const state = await rpc(a, "get_room_state", { p_code: code });
+    const lotId = state.session.current_lot_id;
+
+    await rpc(b, "place_bid", { p_room_id: roomId, p_lot_id: lotId, p_amount_lakh: state.session.next_bid_lakh, p_idempotency_key: key() });
+    const passed = await rpc(c, "pass_lot", { p_room_id: roomId, p_lot_id: lotId });
+    expect(passed.state.passes).toContain("RCB");
+
+    // Changed their mind: the bid is accepted and the pass is cleared.
+    const back = await rpc(c, "place_bid", {
+      p_room_id: roomId, p_lot_id: lotId, p_amount_lakh: passed.state.next_bid_lakh, p_idempotency_key: key(),
+    });
+    expect(back.state.current_bidder).toBe("RCB");
+    expect(back.state.passes).not.toContain("RCB");
+
+    await cleanup(a, roomId);
+  });
+});
+
+describe("season retentions", () => {
+  it("starts franchises with their retained squad, season purse and remaining slots", async () => {
+    const owners = users.slice(0, 4); // CSK, MI, RCB, KKR
+    const [a] = owners;
+    const { roomId, code } = await seatedRoom(owners, { settings: { pool_limit: null } });
+    // No setting can put retained players back into the pool.
+    for (const settings of [{ retention_mode: "none" }, { inactive_retained_in_pool: true }]) {
+      expect(await rpcCode(a, "update_room", { p_room_id: roomId, p_patch: { settings } })).toBe("INVALID_SETTINGS");
+    }
+    await rpc(a, "start_auction", { p_room_id: roomId });
+    const state = await rpc(a, "get_room_state", { p_code: code });
+
+    const { data: season } = await a.client.from("season_franchises").select("franchise_id, purse_lakh, slots, overseas_slots");
+    for (const team of state.teams) {
+      const expected = season!.find((s: any) => s.franchise_id === team.franchise_id)!;
+      expect(team.purse_initial_lakh).toBe(expected.purse_lakh);
+      expect(team.purse_remaining_lakh).toBe(expected.purse_lakh);
+      expect(25 - team.squad_count).toBe(expected.slots);
+      expect(8 - team.overseas_count).toBe(expected.overseas_slots);
+    }
+    // No retained player is on the auction list, including those of the six unpicked franchises.
+    const { data: retainedRows } = await a.client.from("player_seasons").select("player_id").eq("season_id", "ipl-2027").eq("is_retained", true);
+    const retained = new Set(retainedRows!.map((r: any) => r.player_id));
+    expect(retained.size).toBe(184);
+    expect(state.squads.every((s: any) => s.is_retained)).toBe(true);
+    expect(state.lots.some((l: any) => retained.has(l.player_id))).toBe(false);
+
+    // Excluded players never appear.
+    const { data: excluded } = await a.client.from("players").select("id").in("full_name", ["MS Dhoni", "Travis Head", "Mitchell Starc"]);
+    const lotPlayers = new Set(state.lots.map((l: any) => l.player_id));
+    expect(excluded!.length).toBe(3);
+    expect(excluded!.some((p: any) => lotPlayers.has(p.id))).toBe(false);
+
+    await cleanup(a, roomId);
   });
 });
 
