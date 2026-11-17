@@ -258,6 +258,64 @@ describe("bidding (human auctioneer drives the flow)", () => {
   });
 });
 
+describe("passing", () => {
+  it("lets a franchise that passed come back and bid on the same player", async () => {
+    const owners = users.slice(0, 4);
+    const [a, b, c] = owners;
+    const { roomId, code } = await seatedRoom(owners);
+    await rpc(a, "start_auction", { p_room_id: roomId });
+    await rpc(a, "auctioneer_action", { p_room_id: roomId, p_action: "present_next" });
+    const state = await rpc(a, "get_room_state", { p_code: code });
+    const lotId = state.session.current_lot_id;
+
+    await rpc(b, "place_bid", { p_room_id: roomId, p_lot_id: lotId, p_amount_lakh: state.session.next_bid_lakh, p_idempotency_key: key() });
+    const passed = await rpc(c, "pass_lot", { p_room_id: roomId, p_lot_id: lotId });
+    expect(passed.state.passes).toContain("RCB");
+
+    // Changed their mind: the bid is accepted and the pass is cleared.
+    const back = await rpc(c, "place_bid", {
+      p_room_id: roomId, p_lot_id: lotId, p_amount_lakh: passed.state.next_bid_lakh, p_idempotency_key: key(),
+    });
+    expect(back.state.current_bidder).toBe("RCB");
+    expect(back.state.passes).not.toContain("RCB");
+
+    await cleanup(a, roomId);
+  });
+});
+
+describe("season retentions", () => {
+  it("starts franchises with their retained squad, season purse and remaining slots", async () => {
+    const owners = users.slice(0, 4); // CSK, MI, RCB, KKR
+    const [a] = owners;
+    const { roomId, code } = await seatedRoom(owners, {
+      settings: { retention_mode: "season", pool_limit: null, inactive_retained_in_pool: false },
+    });
+    await rpc(a, "start_auction", { p_room_id: roomId });
+    const state = await rpc(a, "get_room_state", { p_code: code });
+
+    const { data: season } = await a.client.from("season_franchises").select("franchise_id, purse_lakh, slots, overseas_slots");
+    for (const team of state.teams) {
+      const expected = season!.find((s: any) => s.franchise_id === team.franchise_id)!;
+      expect(team.purse_initial_lakh).toBe(expected.purse_lakh);
+      expect(team.purse_remaining_lakh).toBe(expected.purse_lakh);
+      expect(25 - team.squad_count).toBe(expected.slots);
+      expect(8 - team.overseas_count).toBe(expected.overseas_slots);
+    }
+    // Retained players are in squads, not on the auction list.
+    const retained = new Set(state.squads.map((s: any) => s.player_id));
+    expect(state.squads.every((s: any) => s.is_retained)).toBe(true);
+    expect(state.lots.some((l: any) => retained.has(l.player_id))).toBe(false);
+
+    // Excluded players never appear.
+    const { data: excluded } = await a.client.from("players").select("id").in("full_name", ["MS Dhoni", "Travis Head", "Mitchell Starc"]);
+    const lotPlayers = new Set(state.lots.map((l: any) => l.player_id));
+    expect(excluded!.length).toBe(3);
+    expect(excluded!.some((p: any) => lotPlayers.has(p.id))).toBe(false);
+
+    await cleanup(a, roomId);
+  });
+});
+
 describe("system auctioneer clock", () => {
   it("sells on the server deadline, not on any client's say-so", async () => {
     const owners = users.slice(0, 4);

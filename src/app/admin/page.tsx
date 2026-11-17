@@ -7,6 +7,7 @@ import { FRANCHISES, ROLE_LABEL } from "@/lib/franchises";
 import { formatMoney } from "@/lib/money";
 import { useAuth } from "@/hooks/useAuth";
 import { usePlayers } from "@/hooks/usePlayers";
+import { useSeasonTeams } from "@/hooks/useSeasonTeams";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { DEFAULT_SETTINGS, SettingsForm, type EditableSettings } from "@/components/lobby/SettingsForm";
 import { AuthGate } from "@/components/shared/AuthGate";
@@ -481,6 +482,7 @@ function SeasonTab({ catalogue }: { catalogue: Catalogue }) {
         <Field label="Name"><Input value={name} onChange={(e) => setName(e.target.value)} /></Field>
         <Field label="Year"><Input type="number" value={year} onChange={(e) => setYear(Number(e.target.value))} /></Field>
       </div>
+      {season && <SeasonFranchises seasonId={season.id} />}
       <SettingsForm value={rules} onChange={(patch) => setRules((current) => ({ ...current, ...patch }))} />
       <div className="flex flex-wrap gap-3">
         <Button variant="gold" busy={busy} onClick={() => save(false)}>Save season</Button>
@@ -495,5 +497,62 @@ export default function AdminPage() {
     <AuthGate reason="Sign in with an administrator account.">
       <Admin />
     </AuthGate>
+  );
+}
+
+/** Purse remaining and open slots per franchise ahead of the auction. */
+function SeasonFranchises({ seasonId }: { seasonId: string }) {
+  const toast = useToast();
+  const teams = useSeasonTeams(seasonId);
+  const [draft, setDraft] = useState<Record<string, { purse: string; slots: string; os: string }>>({});
+  const [saving, setSaving] = useState<string | null>(null);
+
+  const value = (id: string, field: "purse" | "slots" | "os") => {
+    const team = teams.get(id as never);
+    const fallback = { purse: team ? String(team.purse_lakh / 100) : "", slots: team ? String(team.slots) : "", os: team ? String(team.overseas_slots) : "" };
+    return draft[id]?.[field] ?? fallback[field];
+  };
+  const set = (id: string, field: "purse" | "slots" | "os", v: string) =>
+    setDraft((d) => ({ ...d, [id]: { ...(d[id] ?? { purse: value(id, "purse"), slots: value(id, "slots"), os: value(id, "os") }), [field]: v } }));
+
+  async function save(id: string) {
+    setSaving(id);
+    const result = await api("/api/admin/season-franchise", {
+      season_id: seasonId,
+      franchise_id: id,
+      purse_lakh: Math.round(Number(value(id, "purse")) * 100),
+      slots: Number(value(id, "slots")),
+      overseas_slots: Number(value(id, "os")),
+    });
+    setSaving(null);
+    if (!result.ok) return toast(result.error.message, "error");
+    toast(`${id} saved`, "success");
+  }
+
+  return (
+    <div className="rounded-xl border border-line p-4">
+      <p className="eyebrow mb-3">Purse and slots ahead of the auction</p>
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[34rem] text-sm">
+          <thead>
+            <tr className="text-left text-[11px] uppercase tracking-wider text-mute">
+              <th className="pb-2 pr-3">Franchise</th><th className="pb-2 pr-3">Purse (₹ Cr)</th><th className="pb-2 pr-3">Slots</th><th className="pb-2 pr-3">Overseas slots</th><th className="pb-2" />
+            </tr>
+          </thead>
+          <tbody>
+            {FRANCHISES.map((f) => (
+              <tr key={f.id} className="border-t border-line">
+                <td className="py-1.5 pr-3"><span className="flex items-center gap-2"><FranchiseLogo id={f.id} size={22} />{f.id}</span></td>
+                <td className="py-1.5 pr-3"><Input type="number" step="0.05" min={0} value={value(f.id, "purse")} onChange={(e) => set(f.id, "purse", e.target.value)} className="h-9 w-28" aria-label={`${f.id} purse`} /></td>
+                <td className="py-1.5 pr-3"><Input type="number" min={0} max={30} value={value(f.id, "slots")} onChange={(e) => set(f.id, "slots", e.target.value)} className="h-9 w-20" aria-label={`${f.id} slots`} /></td>
+                <td className="py-1.5 pr-3"><Input type="number" min={0} max={30} value={value(f.id, "os")} onChange={(e) => set(f.id, "os", e.target.value)} className="h-9 w-20" aria-label={`${f.id} overseas slots`} /></td>
+                <td className="py-1.5 text-right"><Button size="sm" variant="ghost" busy={saving === f.id} onClick={() => save(f.id)}>Save</Button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="mt-2 text-xs text-dim">Squad and overseas counts at auction start come from the players marked retained; slots here are for reference and should match.</p>
+    </div>
   );
 }

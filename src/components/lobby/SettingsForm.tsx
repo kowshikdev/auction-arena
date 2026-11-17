@@ -16,7 +16,7 @@ export const DEFAULT_SETTINGS: EditableSettings = {
   overseas_max: 8,
   bid_timer_sec: 20,
   format: "standard",
-  retention_mode: "none",
+  retention_mode: "season",
   inactive_retained_in_pool: true,
   unsold_reround: true,
   pool_limit: null,
@@ -65,6 +65,24 @@ export function SettingsForm({
 
   return (
     <div className="space-y-5">
+      <div className="grid grid-cols-2 gap-2">
+        <Choice
+          disabled={disabled}
+          active={value.retention_mode === "season"}
+          onClick={() => onChange({ retention_mode: "season" })}
+          title="IPL 2027 squads"
+          note="Real retentions, purses and open slots after trades"
+        />
+        <Choice
+          disabled={disabled}
+          active={value.retention_mode === "none"}
+          onClick={() => onChange({ retention_mode: "none" })}
+          title="Mega auction"
+          note="Empty squads, everyone in the pool, equal purse"
+        />
+      </div>
+
+      {value.retention_mode === "none" && (
       <div>
         <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-mute">Purse per franchise</p>
         <div className="grid grid-cols-3 gap-2">
@@ -89,6 +107,7 @@ export function SettingsForm({
           />
         </div>
       </div>
+      )}
 
       <div>
         <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-mute">Player pool</p>
@@ -123,12 +142,6 @@ export function SettingsForm({
         <Field label="Overseas limit">
           <Input type="number" min={0} max={30} disabled={disabled} value={value.overseas_max} onChange={(e) => onChange({ overseas_max: Number(e.target.value) })} />
         </Field>
-        <Field label="Retentions">
-          <Select disabled={disabled} value={value.retention_mode} onChange={(e) => onChange({ retention_mode: e.target.value as EditableSettings["retention_mode"] })}>
-            <option value="none">None: everyone in the pool</option>
-            <option value="season">Use season retention list</option>
-          </Select>
-        </Field>
       </div>
 
       <div className="space-y-3 rounded-xl border border-line bg-black/20 p-3.5">
@@ -138,13 +151,14 @@ export function SettingsForm({
             disabled={disabled}
             checked={value.inactive_retained_in_pool}
             onChange={(v) => onChange({ inactive_retained_in_pool: v })}
-            label="Put players retained by empty franchises into the pool"
+            label="Players retained by franchises nobody picked go into the auction"
           />
         )}
       </div>
       <p className="text-xs leading-relaxed text-dim">
         Bid steps follow the IPL table: ₹5 L up to ₹1 Cr, ₹10 L to ₹2 Cr, ₹20 L to ₹5 Cr, then ₹25 L. A franchise must keep
         enough purse to fill its minimum squad.
+        {value.retention_mode === "season" && " With IPL 2027 squads, each franchise starts with its real purse remaining and retained players, and the pool is the released and registered players."}
       </p>
     </div>
   );

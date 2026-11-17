@@ -133,13 +133,13 @@ export function Stage({
   if (!myTeam) blocked = "You are not bidding in this auction";
   else if (!bidding) blocked = paused ? "Auction paused" : "Bidding closed";
   else if (session.current_bidder === me.franchise_id) blocked = "You hold the highest bid";
-  else if (session.passes.includes(myTeam.franchise_id)) blocked = "You passed on this player";
   else if (myTeam.squad_count >= settings.squad_max) blocked = "Your squad is full";
   else if (player?.is_overseas && myTeam.overseas_count >= settings.overseas_max) blocked = "Overseas limit reached";
   else if (nextAmount > myTeam.purse_remaining_lakh) blocked = "Not enough purse";
   else if (nextAmount > myMax) blocked = "Purse reserved for minimum squad";
 
-  const canPass = Boolean(myTeam) && bidding && session.current_bidder !== me.franchise_id && !session.passes.includes(myTeam!.franchise_id);
+  const iPassed = Boolean(myTeam && session.passes.includes(myTeam.franchise_id));
+  const canPass = Boolean(myTeam) && bidding && session.current_bidder !== me.franchise_id && !iPassed;
 
   return (
     <div className="panel relative overflow-hidden" style={teamStyle(session.current_bidder)}>
@@ -235,11 +235,11 @@ export function Stage({
             className={cn("h-16 flex-col gap-0 text-lg", !blocked && "shine")}
             aria-label={blocked ?? `Bid ${formatMoney(nextAmount)}`}
           >
-            <span className="display text-2xl leading-none">{blocked ? blocked : `Bid ${formatMoney(nextAmount)}`}</span>
-            {!blocked && <span className="text-[11px] font-semibold opacity-70">press B</span>}
+            <span className="display text-2xl leading-none">{blocked ? blocked : `${iPassed ? "Rejoin at" : "Bid"} ${formatMoney(nextAmount)}`}</span>
+            {!blocked && <span className="text-[11px] font-semibold opacity-70">{iPassed ? "you passed · you can still come back" : "press B"}</span>}
           </Button>
           <Button variant="outline" size="lg" disabled={!canPass} onClick={onPass} className="h-16 px-6">
-            <span className="display text-2xl leading-none">Pass</span>
+            <span className="display text-2xl leading-none">{iPassed ? "Passed" : "Pass"}</span>
           </Button>
         </div>
         {myTeam && (

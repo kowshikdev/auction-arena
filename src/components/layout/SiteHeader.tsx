@@ -4,14 +4,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
 import { Avatar } from "@/components/shared/identity";
+import { LogoMark } from "@/components/shared/Logo";
 import { Button } from "@/components/shared/ui";
 
 export function Wordmark({ className }: { className?: string }) {
   return (
     <Link href="/" className={`display flex items-center gap-2 text-2xl tracking-wide ${className ?? ""}`}>
-      <span aria-hidden className="grid size-8 place-items-center rounded-lg bg-gradient-to-b from-[#ffe08a] to-gold-deep text-base text-ink">
-        A
-      </span>
+      <LogoMark size={34} className="shrink-0 drop-shadow-[0_4px_14px_rgba(246,196,83,0.35)]" />
       <span>
         Auction<span className="gold-text">Arena</span>
       </span>

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { JoinBox } from "@/components/dashboard/JoinBox";
-import { FranchiseLogo, PlayerPortrait } from "@/components/shared/identity";
+import { FranchiseLogo } from "@/components/shared/identity";
+import { HeroCard } from "@/components/landing/HeroCard";
+import { loadFeatured } from "@/lib/featured";
 import { Badge, Button, LiveDot } from "@/components/shared/ui";
 import { FRANCHISES } from "@/lib/franchises";
 
@@ -14,14 +16,18 @@ const STEPS = [
 
 const FEATURES = [
   { title: "Server-decided bids", body: "Two owners bid in the same instant? The database picks exactly one winner. No client ever decides a sale." },
-  { title: "Real auction rules", body: "₹125 Cr purse, 25-player squads, 8 overseas, real bid increments. All of it configurable by the host." },
+  { title: "Real auction rules", body: "Real purses and open slots, 25-player squads, 8 overseas, IPL bid increments. All configurable by the host." },
   { title: "Voice at the table", body: "Talk to the room while you bid: mute, push-to-talk and speaking indicators built in." },
   { title: "Virtual auctioneer", body: "A system auctioneer calls every lot and bid out loud, or one of you takes the hammer." },
   { title: "Refresh-proof", body: "Drop your connection or reload the tab and you land back in your seat with the live state." },
-  { title: "250 players", body: "Current squads in marquee, capped and uncapped sets, ready for mega or mini auction formats." },
+  { title: "Real IPL 2027 squads", body: "Retained squads, purses left after trades and the full registered pool. Or switch to a mega auction from scratch." },
 ];
 
-export default function LandingPage() {
+// Rebuilt at most every 10 minutes, so the featured players and purses rotate from the database.
+export const revalidate = 600;
+
+export default async function LandingPage() {
+  const featured = await loadFeatured();
   return (
     <div className="stadium min-h-dvh">
       <SiteHeader />
@@ -59,41 +65,11 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Illustrative auction card */}
-          <div className="relative animate-rise [animation-delay:120ms]" aria-hidden>
-            <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gold/10 blur-3xl" />
-            <div className="panel overflow-hidden">
-              <div className="flex items-center justify-between border-b border-line px-5 py-3">
-                <span className="eyebrow flex items-center gap-2 text-[#ff8f9b]"><LiveDot /> Live auction</span>
-                <span className="eyebrow">Lot 024 · Marquee</span>
-              </div>
-              <div className="grid gap-5 p-5 sm:grid-cols-[auto_1fr]">
-                <PlayerPortrait name="Star Batter" teamId="MI" size={132} />
-                <div>
-                  <p className="display text-4xl">Star Batter</p>
-                  <p className="mt-1 text-sm text-mute">Batter · India · Base ₹2.00 Cr</p>
-                  <div className="mt-4 flex items-end justify-between gap-4">
-                    <div>
-                      <p className="eyebrow">Current bid</p>
-                      <p className="display gold-text tabular text-6xl">₹14.25 Cr</p>
-                    </div>
-                    <div className="grid size-20 place-items-center rounded-full border-2 border-live/70 text-live">
-                      <span className="display tabular text-4xl">07</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="grid grid-cols-4 gap-px border-t border-line bg-line">
-                {(["CSK", "MI", "RCB", "KKR"] as const).map((id, i) => (
-                  <div key={id} className={`flex flex-col items-center gap-1.5 bg-panel px-2 py-3 ${i === 1 ? "team-wash" : ""}`} style={i === 1 ? ({ "--team": "#1E6FD9" } as React.CSSProperties) : undefined}>
-                    <FranchiseLogo id={id} size={34} />
-                    <span className="tabular text-xs font-semibold text-mute">{["₹88.4", "₹71.0", "₹94.8", "₹80.2"][i]} Cr</span>
-                    {i === 1 && <Badge tone="gold">Leading</Badge>}
-                  </div>
-                ))}
-              </div>
+          {featured && (
+            <div className="animate-rise [animation-delay:120ms]">
+              <HeroCard featured={featured} />
             </div>
-          </div>
+          )}
         </section>
 
         {/* Franchise strip */}

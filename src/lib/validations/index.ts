@@ -84,4 +84,6 @@ export const playerRow = z.object({
   retention_lakh: z.string().trim().max(8).optional().default(""),
   last_price_lakh: z.string().trim().max(8).optional().default(""),
   photo_url: z.string().trim().max(400).optional().default(""),
+  available: z.string().trim().max(5).optional().default("Y"),
+  stats: z.string().trim().max(2000).optional().default(""),
 });

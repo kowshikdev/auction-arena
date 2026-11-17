@@ -25,6 +25,9 @@ test("four owners run an auction from invite to results", async ({ browser }) =>
   const visitor = await browser.newPage();
   await visitor.goto("/");
   await expect(visitor.getByRole("heading", { name: /One hammer/ })).toBeVisible();
+  // The hero card shows a real player from the catalogue, not placeholder text.
+  await expect(visitor.getByTestId("hero-player")).not.toHaveText(/star batter/i);
+  await expect(visitor.getByTestId("hero-player")).not.toBeEmpty();
   await visitor.screenshot({ path: `${SHOTS}/01-landing.png`, fullPage: true });
   await visitor.close();
 
@@ -69,6 +72,16 @@ test("four owners run an auction from invite to results", async ({ browser }) =>
   // ---- Everyone sees four participants without refreshing
   for (const page of owners) await expect(page.getByText("Participants · 4")).toBeVisible();
 
+  // Host participant actions open as a menu and close with Escape.
+  await host.getByRole("button", { name: "Actions for Test Owner 2" }).click();
+  await expect(host.getByRole("menuitem", { name: "Make auctioneer" })).toBeVisible();
+  await expect(host.getByRole("menuitem", { name: "Remove from room" })).toBeVisible();
+  await host.keyboard.press("Escape");
+  await expect(host.getByRole("menu")).toHaveCount(0);
+
+  // IPL 2027 mode shows each franchise's real purse on its card.
+  await expect(host.getByText(/₹14.15 Cr · 5 slots · 1 OS/)).toBeVisible();
+
   // ---- Unique franchises: once taken, a franchise is disabled for everyone else
   for (const [i, page] of owners.entries()) {
     await page.getByRole("button", { name: new RegExp(`^${TEAMS[i]}`) }).click();
@@ -101,6 +114,8 @@ test("four owners run an auction from invite to results", async ({ browser }) =>
   for (const page of owners) await expect(page.getByTestId("player-name")).toHaveText(playerName);
 
   // ---- Bids: every screen shows the same accepted bid and leader
+  // RCB starts with its real IPL 2027 purse, not a flat room purse.
+  await expect(host.getByTestId("purse-RCB")).toHaveText("₹14.15 Cr");
   await second.getByRole("button", { name: /^Bid ₹/ }).click();
   for (const page of owners) await expect(page.getByTestId("leader")).toHaveText("Mumbai Indians");
   const firstBid = (await host.getByTestId("current-bid").textContent()) ?? "";
@@ -119,7 +134,7 @@ test("four owners run an auction from invite to results", async ({ browser }) =>
   for (const page of owners) await expect(page.getByTestId("result-stamp")).toContainText("Sold", { timeout: 30_000 });
   await host.screenshot({ path: `${SHOTS}/06-sold.png`, fullPage: true });
   const purse = (await host.getByTestId("purse-RCB").textContent()) ?? "";
-  expect(purse).not.toBe("₹125.00 Cr");
+  expect(purse).not.toBe("₹14.15 Cr");
   for (const page of owners) await expect(page.getByTestId("purse-RCB")).toHaveText(purse);
 
   // ---- Refresh: the owner keeps their franchise and sees the live state
@@ -160,10 +175,16 @@ test("four owners run an auction from invite to results", async ({ browser }) =>
 
 test("player catalogue can be searched and filtered", async ({ page }) => {
   await page.goto("/players");
-  await expect(page.getByText(/250 of 250 players/)).toBeVisible({ timeout: 30_000 });
+  // Default view is the auction pool; Kohli is retained, so he appears only under Retained.
+  await expect(page.getByText(/^\d+ of \d+ players/)).toBeVisible({ timeout: 30_000 });
   await page.getByLabel("Search players").fill("kohli");
+  await expect(page.getByText(/^0 of \d+ players/)).toBeVisible();
+  await page.getByLabel("Status").selectOption("retained");
   await expect(page.getByText("Virat Kohli")).toBeVisible();
-  await expect(page.getByText(/^1 of 250 players/)).toBeVisible();
+  // Excluded players are not listed anywhere.
+  await page.getByLabel("Status").selectOption("all");
+  await page.getByLabel("Search players").fill("dhoni");
+  await expect(page.getByText(/^0 of \d+ players/)).toBeVisible();
   await page.screenshot({ path: `${SHOTS}/09-players.png` });
 });
 

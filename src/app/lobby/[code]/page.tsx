@@ -14,7 +14,8 @@ import { AuthGate } from "@/components/shared/AuthGate";
 import { ChatPanel } from "@/components/shared/ChatPanel";
 import { Avatar, FranchiseLogo, TeamBanner } from "@/components/shared/identity";
 import { useToast } from "@/components/shared/toast";
-import { Badge, Button, Modal, Panel, Select, Spinner, cn } from "@/components/shared/ui";
+import { Badge, Button, Menu, Modal, Panel, Spinner, cn } from "@/components/shared/ui";
+import { useSeasonTeams, type SeasonTeam } from "@/hooks/useSeasonTeams";
 import { MicTest, VoiceDock } from "@/components/voice/VoiceDock";
 import type { FranchiseId, Member, RoomSnapshot } from "@/types";
 
@@ -59,6 +60,7 @@ function Lobby() {
   const voice = useVoice(code);
   const snapshot = room.snapshot;
   const now = useNow();
+  const seasonTeams = useSeasonTeams(snapshot?.room.season_id);
 
   const [pending, setPending] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -214,6 +216,11 @@ function Lobby() {
                   </TeamBanner>
                   <div className="p-3">
                     <p className="display truncate text-lg leading-tight">{team.name}</p>
+                    {snapshot.settings.retention_mode === "season" && seasonTeams.get(team.id) && (
+                      <p className="tabular mt-0.5 text-[11px] font-semibold text-gold">
+                        {formatMoney(seasonTeams.get(team.id)!.purse_lakh)} · {seasonTeams.get(team.id)!.slots} slots · {seasonTeams.get(team.id)!.overseas_slots} OS
+                      </p>
+                    )}
                     {owner ? (
                       <div className="mt-2 flex items-center gap-2">
                         <Avatar name={owner.display_name} src={owner.avatar_url} size={22} />
@@ -304,22 +311,14 @@ function Lobby() {
                   </div>
                   <FranchiseLogo id={member.franchise_id} size={26} />
                   {me.is_host && member.user_id !== me.user_id && (
-                    <Select
-                      aria-label={`Actions for ${member.display_name}`}
-                      value=""
-                      className="h-8 w-10 shrink-0 px-0 text-center"
-                      onChange={(e) => {
-                        const action = e.target.value;
-                        if (action === "kick") void act("kick", "/api/rooms/kick", { room_id: roomId, user_id: member.user_id });
-                        if (action === "host") void act("host", "/api/rooms/host", { room_id: roomId, user_id: member.user_id });
-                        if (action === "auctioneer") void act("auc", "/api/rooms/auctioneer", { room_id: roomId, type: "human", user_id: member.user_id });
-                      }}
-                    >
-                      <option value="">⋯</option>
-                      <option value="auctioneer">Make auctioneer</option>
-                      <option value="host">Make host</option>
-                      <option value="kick">Remove</option>
-                    </Select>
+                    <Menu
+                      label={`Actions for ${member.display_name}`}
+                      items={[
+                        { label: "Make auctioneer", onSelect: () => void act("auc", "/api/rooms/auctioneer", { room_id: roomId, type: "human", user_id: member.user_id }) },
+                        { label: "Make host", onSelect: () => void act("host", "/api/rooms/host", { room_id: roomId, user_id: member.user_id }) },
+                        { label: "Remove from room", tone: "danger", onSelect: () => void act("kick", "/api/rooms/kick", { room_id: roomId, user_id: member.user_id }) },
+                      ]}
+                    />
                   )}
                 </li>
               ))}
@@ -352,7 +351,7 @@ function Lobby() {
                 </Button>
               )}
             </div>
-            <SetupSummary snapshot={snapshot} />
+            <SetupSummary snapshot={snapshot} seasonTeams={seasonTeams} />
             {me.is_host && (
               <div className="mt-4 grid grid-cols-2 gap-2">
                 <Button
@@ -390,7 +389,7 @@ function Lobby() {
   );
 }
 
-function SetupSummary({ snapshot }: { snapshot: RoomSnapshot }) {
+function SetupSummary({ snapshot, seasonTeams }: { snapshot: RoomSnapshot; seasonTeams: Map<string, SeasonTeam> }) {
   const { settings, room: info, members } = snapshot;
   const auctioneerName =
     info.auctioneer_type === "human"
@@ -398,13 +397,13 @@ function SetupSummary({ snapshot }: { snapshot: RoomSnapshot }) {
       : "System (automatic)";
   const rows: [string, string][] = [
     ["Auctioneer", auctioneerName],
-    ["Purse", formatMoney(settings.purse_lakh, { compact: true })],
+    ["Purse", settings.retention_mode === "season" && seasonTeams.size > 0 ? "Season purse per team" : formatMoney(settings.purse_lakh, { compact: true })],
     ["Squad", `${settings.squad_min} to ${settings.squad_max} players`],
     ["Overseas limit", String(settings.overseas_max)],
     ["Bid timer", `${settings.bid_timer_sec} seconds`],
     ["Format", settings.format],
     ["Player pool", settings.pool_limit ? `First ${settings.pool_limit} players` : "Full catalogue"],
-    ["Retentions", settings.retention_mode === "season" ? "Season list" : "None"],
+    ["Retentions", settings.retention_mode === "season" ? "IPL 2027 squads" : "None"],
   ];
   return (
     <dl className="space-y-1.5 text-sm">

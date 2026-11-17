@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { csvToObjects, parseCsv } from "@/lib/csv";
+import { pickForWindow } from "@/lib/featured";
 import { formatMoney, maxBid, nextBid, speakMoney } from "@/lib/money";
 import type { IncrementBand } from "@/types";
 
@@ -68,5 +69,21 @@ describe("csv import", () => {
       { name: "Virat Kohli", team: "RCB" },
       { name: "MS Dhoni", team: "CSK" },
     ]);
+  });
+});
+
+describe("landing page rotation", () => {
+  const items = Array.from({ length: 20 }, (_, i) => ({ id: `p${i}` }));
+  const window = 10 * 60 * 1000;
+
+  it("shows the same lineup within a 10-minute window and a different one in the next", () => {
+    const t = 1_800_000_000_000;
+    const now = pickForWindow(items, 6, t).map((p) => p.id);
+    expect(pickForWindow(items, 6, t + 60_000).map((p) => p.id)).toEqual(now);
+    expect(pickForWindow(items, 6, t + window).map((p) => p.id)).not.toEqual(now);
+    expect(new Set(now).size).toBe(6);
+  });
+  it("returns everything when there are fewer items than requested", () => {
+    expect(pickForWindow(items.slice(0, 3), 6)).toHaveLength(3);
   });
 });
