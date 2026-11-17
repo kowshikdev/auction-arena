@@ -261,6 +261,15 @@ describe("bidding (human auctioneer drives the flow)", () => {
   });
 });
 
+describe("admin", () => {
+  it("keeps site stats and admin access to the admin only", async () => {
+    const [a] = users;
+    expect(await rpcCode(a, "admin_overview")).toBe("NOT_ADMIN");
+    // An admin already exists, so nobody else can claim the role.
+    expect(await rpcCode(a, "claim_admin")).toBe("ADMIN_EXISTS");
+  });
+});
+
 describe("passing", () => {
   it("lets a franchise that passed come back and bid on the same player", async () => {
     const owners = users.slice(0, 4);

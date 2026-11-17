@@ -16,6 +16,7 @@
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.119.0",
+    "@vercel/analytics": "^2.0.1",
     "livekit-client": "^2.24.1",
     "livekit-server-sdk": "^2.19.3",
     "motion": "^14.14.0",

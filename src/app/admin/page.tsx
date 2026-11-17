@@ -18,7 +18,8 @@ import type { Player, PlayerRole } from "@/types";
 
 type Overview = {
   counts: Record<string, number>;
-  rooms: { room_id: string; code: string; name: string; status: string; visibility: string; host_name: string; member_count: number; created_at: string }[];
+  daily: { day: string; rooms: number; auctions: number; people: number }[];
+  rooms: { room_id: string; code: string; name: string; status: string; visibility: string; host_name: string; member_count: number; online: number; created_at: string }[];
   reports: { id: number; message: string; status: string; created_at: string; room_code: string | null; reporter: string }[];
   admins: { user_id: string; display_name: string }[];
 };
@@ -40,7 +41,11 @@ function Admin() {
   }, []);
 
   useEffect(() => {
-    if (profile?.is_admin) void loadOverview();
+    if (!profile?.is_admin) return;
+    void loadOverview();
+    // Live numbers: refresh every 30 seconds while the page is open.
+    const timer = setInterval(() => void loadOverview(), 30_000);
+    return () => clearInterval(timer);
   }, [profile?.is_admin, loadOverview]);
 
   if (!profile) return <div className="stadium grid min-h-dvh place-items-center"><Spinner className="size-8 text-gold" /></div>;
@@ -111,10 +116,13 @@ function Admin() {
 function OverviewTab({ overview, reload }: { overview: Overview | null; reload: () => Promise<void> }) {
   const toast = useToast();
   if (!overview) return <div className="grid place-items-center py-16"><Spinner className="size-7 text-gold" /></div>;
-  const labels: Record<string, string> = {
-    users: "Users", guests: "Guests", players: "Active players", rooms_open: "Open rooms",
-    auctions_completed: "Completed auctions", reports_open: "Open reports",
-  };
+  const groups: { title: string; items: [string, string][] }[] = [
+    { title: "Right now", items: [["online_now", "People online"], ["rooms_live", "Auctions running"], ["rooms_waiting", "Rooms in lobby"]] },
+    { title: "Today", items: [["rooms_today", "Rooms created"], ["auctions_today", "Auctions finished"], ["bids_today", "Bids placed"], ["signups_today", "New accounts"], ["guests_today", "New guests"]] },
+    { title: "Last 7 days", items: [["rooms_7d", "Rooms created"], ["auctions_7d", "Auctions finished"]] },
+    { title: "All time", items: [["users", "Accounts"], ["guests", "Guests"], ["auctions_completed", "Auctions finished"], ["players", "Players in catalogue"], ["reports_open", "Open reports"]] },
+  ];
+  const peak = Math.max(1, ...overview.daily.map((d) => d.rooms));
 
   async function post(path: string, body: Record<string, unknown>, done: string) {
     const result = await api(path, body);
@@ -125,14 +133,35 @@ function OverviewTab({ overview, reload }: { overview: Overview | null; reload: 
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
-        {Object.entries(overview.counts).map(([key, value]) => (
-          <Panel key={key} className="p-4">
-            <p className="eyebrow text-[10px]">{labels[key] ?? key}</p>
-            <p className="display tabular mt-1 text-4xl">{value}</p>
-          </Panel>
-        ))}
-      </div>
+      {groups.map((group) => (
+        <section key={group.title}>
+          <p className="eyebrow mb-2">{group.title}</p>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
+            {group.items.map(([key, label]) => (
+              <Panel key={key} className="p-4">
+                <p className="eyebrow text-[10px]">{label}</p>
+                <p className="display tabular mt-1 text-4xl">{overview.counts[key] ?? 0}</p>
+              </Panel>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <Panel className="p-5">
+        <div className="mb-4 flex items-baseline justify-between gap-3">
+          <h2 className="display text-3xl">Rooms per day</h2>
+          <p className="text-xs text-dim">Last 7 days, India time. Refreshes every 30 seconds.</p>
+        </div>
+        <div className="flex h-40 items-end gap-2" role="img" aria-label="Rooms created per day over the last 7 days">
+          {overview.daily.map((d) => (
+            <div key={d.day} className="flex flex-1 flex-col items-center gap-1.5">
+              <span className="tabular text-xs font-semibold">{d.rooms}</span>
+              <div className="w-full rounded-t-md bg-gold/80" style={{ height: `${Math.max(3, (d.rooms / peak) * 110)}px` }} title={`${d.rooms} rooms, ${d.auctions} finished, ${d.people} new people`} />
+              <span className="text-[10px] text-mute">{new Date(d.day).toLocaleDateString(undefined, { weekday: "short", day: "numeric" })}</span>
+            </div>
+          ))}
+        </div>
+      </Panel>
 
       <Panel className="p-5">
         <h2 className="display mb-3 text-3xl">Rooms</h2>
@@ -142,7 +171,7 @@ function OverviewTab({ overview, reload }: { overview: Overview | null; reload: 
               <thead>
                 <tr className="text-left text-[11px] uppercase tracking-wider text-mute">
                   <th className="pb-2 pr-3">Code</th><th className="pb-2 pr-3">Name</th><th className="pb-2 pr-3">Host</th>
-                  <th className="pb-2 pr-3">Owners</th><th className="pb-2 pr-3">Status</th><th className="pb-2 pr-3">Created</th><th className="pb-2" />
+                  <th className="pb-2 pr-3">Owners (online)</th><th className="pb-2 pr-3">Status</th><th className="pb-2 pr-3">Created</th><th className="pb-2" />
                 </tr>
               </thead>
               <tbody>
@@ -151,7 +180,7 @@ function OverviewTab({ overview, reload }: { overview: Overview | null; reload: 
                     <td className="py-2 pr-3 font-mono tracking-widest">{room.code}</td>
                     <td className="py-2 pr-3 font-bold">{room.name}</td>
                     <td className="py-2 pr-3 text-mute">{room.host_name}</td>
-                    <td className="tabular py-2 pr-3 text-mute">{room.member_count}</td>
+                    <td className="tabular py-2 pr-3 text-mute">{room.member_count}{room.online > 0 && <span className="text-go"> ({room.online})</span>}</td>
                     <td className="py-2 pr-3"><Badge tone={room.status === "live" ? "live" : room.status === "completed" ? "gold" : "neutral"}>{room.status}</Badge></td>
                     <td className="py-2 pr-3 text-xs text-dim">{new Date(room.created_at).toLocaleString(undefined, { dateStyle: "short", timeStyle: "short" })}</td>
                     <td className="py-2 text-right">
