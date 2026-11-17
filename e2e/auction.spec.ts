@@ -199,3 +199,13 @@ test("mobile layout keeps the bid controls usable", async ({ browser }) => {
   expect(overflow).toBeLessThanOrEqual(1);
   await page.screenshot({ path: `${SHOTS}/10-mobile-landing.png`, fullPage: true });
 });
+
+test("landing hero rotates players and franchises together", async ({ page }) => {
+  await page.goto("/");
+  const player = page.getByTestId("hero-player");
+  const teams = page.getByTestId("hero-teams");
+  const firstPlayer = await player.textContent();
+  const firstTeams = await teams.textContent();
+  await expect(player).not.toHaveText(firstPlayer ?? "", { timeout: 10_000 });
+  await expect(teams).not.toHaveText(firstTeams ?? "");
+});

@@ -22,6 +22,8 @@ export function HeroCard({ featured }: { featured: Featured }) {
   const player = players[index];
   if (!player) return null;
   const team = franchise(player.team);
+  // Four franchises at a time, moving on with each player.
+  const visibleTeams = teams.length <= 4 ? teams : Array.from({ length: 4 }, (_, k) => teams[(index * 4 + k) % teams.length]);
   const stats = Object.entries(player.stats).filter(([k]) => k !== "Age").slice(0, 3);
 
   return (
@@ -67,9 +69,9 @@ export function HeroCard({ featured }: { featured: Featured }) {
         </div>
 
         {teams.length > 0 && (
-          <div className="grid grid-cols-4 gap-px border-t border-line bg-line">
-            {teams.map((t) => (
-              <div key={t.franchise_id} className="flex flex-col items-center gap-1.5 bg-panel px-2 py-3">
+          <div key={index} data-testid="hero-teams" className="grid grid-cols-4 gap-px border-t border-line bg-line">
+            {visibleTeams.map((t) => (
+              <div key={t.franchise_id} className="flex animate-rise flex-col items-center gap-1.5 bg-panel px-2 py-3">
                 <FranchiseLogo id={t.franchise_id} size={34} />
                 <span className="tabular text-xs font-semibold text-chalk">{formatMoney(t.purse_lakh)}</span>
                 <span className="text-[10px] text-mute">{t.slots} slots left</span>
