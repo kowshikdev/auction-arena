@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow_Condensed, Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { AuthProvider } from "@/hooks/useAuth";
 import { ToastProvider } from "@/components/shared/toast";
 import "./globals.css";
@@ -25,6 +26,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ToastProvider>
           <AuthProvider>{children}</AuthProvider>
         </ToastProvider>
+        {/* Visitor stats, visible only in the Vercel dashboard. No cookies. */}
+        <Analytics />
       </body>
     </html>
   );
