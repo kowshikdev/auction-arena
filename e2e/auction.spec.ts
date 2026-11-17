@@ -28,6 +28,8 @@ test("four owners run an auction from invite to results", async ({ browser }) =>
   // The hero card shows a real player from the catalogue, not placeholder text.
   await expect(visitor.getByTestId("hero-player")).not.toHaveText(/star batter/i);
   await expect(visitor.getByTestId("hero-player")).not.toBeEmpty();
+  await expect(visitor.getByText("Up for auction")).toBeVisible();
+  await expect(visitor.getByText("Retained by")).toHaveCount(0);
   await visitor.screenshot({ path: `${SHOTS}/01-landing.png`, fullPage: true });
   await visitor.close();
 

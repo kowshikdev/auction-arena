@@ -34,7 +34,7 @@ export function pickForWindow<T extends { id: string }>(items: T[], count: numbe
 }
 
 /**
- * Real players and purses for the landing page hero, read with the public key.
+ * Headline auction players and real purses for the landing page hero, read with the public key.
  * Returns null when the database is unreachable so the page can still render.
  */
 export async function loadFeatured(): Promise<Featured | null> {
@@ -52,7 +52,9 @@ export async function loadFeatured(): Promise<Featured | null> {
         .select("player_id, base_price_lakh, franchise_id, is_retained, players!inner(full_name, role, country, stats, is_active)")
         .eq("season_id", season.id)
         .eq("is_available", true)
-        .gte("base_price_lakh", 150)
+        // Headline names going under the hammer: marquee or top-base-price players, never retained ones.
+        .eq("is_retained", false)
+        .or("is_marquee.eq.true,base_price_lakh.gte.200")
         .limit(400),
       supabase.from("season_franchises").select("franchise_id, purse_lakh, slots").eq("season_id", season.id),
     ]);
