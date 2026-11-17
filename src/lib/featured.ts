@@ -80,10 +80,8 @@ export async function loadFeatured(): Promise<Featured | null> {
     return {
       season: season.name as string,
       players: pickForWindow(pool, 6),
-      teams: pickForWindow(
-        ((teams.data ?? []) as FeaturedTeam[]).map((t) => ({ ...t, id: t.franchise_id })),
-        4,
-      ),
+      // All ten, biggest purse first; the card cycles through them four at a time.
+      teams: ((teams.data ?? []) as FeaturedTeam[]).sort((a, b) => b.purse_lakh - a.purse_lakh),
     };
   } catch {
     return null;
