@@ -14,6 +14,7 @@ import { Scoreboard } from "@/components/auction/Scoreboard";
 import { SidePanel } from "@/components/auction/SidePanel";
 import { Stage } from "@/components/auction/Stage";
 import { Wordmark } from "@/components/layout/SiteHeader";
+import { SeasonTag } from "@/components/shared/SeasonTag";
 import { AuthGate } from "@/components/shared/AuthGate";
 import { useToast } from "@/components/shared/toast";
 import { Badge, Button, LiveDot, Modal, Panel, Spinner, cn } from "@/components/shared/ui";
@@ -135,8 +136,9 @@ function AuctionRoom() {
                 ) : session?.status === "paused" ? (
                   <Badge tone="warn">Paused</Badge>
                 ) : (
-                  <Badge tone="live"><LiveDot /> Live auction</Badge>
+                  <Badge tone="live"><LiveDot /> Live</Badge>
                 )}
+                <SeasonTag size="sm" />
                 <span className="font-mono text-xs tracking-widest text-dim">{info.code}</span>
               </div>
               <h1 className="display truncate text-xl sm:text-2xl">{info.name}</h1>

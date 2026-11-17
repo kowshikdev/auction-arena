@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { JoinBox } from "@/components/dashboard/JoinBox";
 import { FranchiseLogo } from "@/components/shared/identity";
 import { HeroCard } from "@/components/landing/HeroCard";
+import { SeasonTag } from "@/components/shared/SeasonTag";
 import { loadFeatured } from "@/lib/featured";
 import { Badge, Button, LiveDot } from "@/components/shared/ui";
 import { FRANCHISES } from "@/lib/franchises";
@@ -20,7 +21,7 @@ const FEATURES = [
   { title: "Voice at the table", body: "Talk to the room while you bid: mute, push-to-talk and speaking indicators built in." },
   { title: "Virtual auctioneer", body: "A system auctioneer calls every lot and bid out loud, or one of you takes the hammer." },
   { title: "Refresh-proof", body: "Drop your connection or reload the tab and you land back in your seat with the live state." },
-  { title: "Real IPL 2027 squads", body: "Retained squads, purses left after trades and the full registered pool. Or switch to a mega auction from scratch." },
+  { title: "Real IPL 2027 squads", body: "Retained squads, purses left after trades and the full registered pool." },
 ];
 
 // Rebuilt at most every 10 minutes, so the featured players and purses rotate from the database.
@@ -36,9 +37,10 @@ export default async function LandingPage() {
         {/* Hero */}
         <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:pt-20">
           <div className="animate-rise">
-            <Badge tone="live" className="mb-5">
-              <LiveDot /> Multiplayer mock auction
-            </Badge>
+            <div className="mb-5 flex flex-wrap items-center gap-3">
+              <SeasonTag size="lg" />
+              <Badge tone="live"><LiveDot /> Multiplayer mock auction</Badge>
+            </div>
             <h1 className="display text-6xl sm:text-7xl lg:text-8xl">
               Your friends.
               <br />
@@ -47,7 +49,7 @@ export default async function LandingPage() {
               <span className="gold-text">One hammer.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-mute">
-              Run a full IPL-style player auction in your browser. Real-time bidding, live voice chat and an auctioneer who
+              Run the IPL 2027 mini auction with your friends: real retained squads, real purses, the full registered pool. Real-time bidding, live voice chat and an auctioneer who
               never misses a bid.
             </p>
 

@@ -80,8 +80,7 @@ export async function seatedRoom(
     p_visibility: "private",
     p_max_participants: 10,
     p_auctioneer_type: options.auctioneer ?? "human",
-    // Room purse rules unless a test opts into the season's retentions and purses.
-    p_settings: { pool_limit: 20, retention_mode: "none", ...options.settings },
+    p_settings: { pool_limit: 20, ...options.settings },
   });
   const roomId = created.room_id as string;
   const code = created.code as string;

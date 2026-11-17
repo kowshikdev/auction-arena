@@ -9,6 +9,7 @@ import { useNow } from "@/hooks/useNow";
 import { useRoom } from "@/hooks/useRoom";
 import { useVoice } from "@/hooks/useVoice";
 import { Wordmark } from "@/components/layout/SiteHeader";
+import { SeasonTag } from "@/components/shared/SeasonTag";
 import { SettingsForm, type EditableSettings } from "@/components/lobby/SettingsForm";
 import { AuthGate } from "@/components/shared/AuthGate";
 import { ChatPanel } from "@/components/shared/ChatPanel";
@@ -159,7 +160,8 @@ function Lobby() {
           <div className="flex items-center gap-5">
             <Wordmark className="hidden sm:flex" />
             <div>
-              <p className="eyebrow">Lobby · {info.visibility}</p>
+              <SeasonTag size="sm" />
+              <p className="eyebrow mt-1">Lobby · {info.visibility}</p>
               <h1 className="display text-2xl sm:text-3xl">{info.name}</h1>
             </div>
           </div>

@@ -18,8 +18,9 @@ export const settingsPatch = z
     bid_timer_sec: z.number().int().min(5).max(120),
     format: z.enum(["standard", "accelerated", "custom"]),
     increments: z.array(incrementBand).min(1).max(8),
-    retention_mode: z.enum(["none", "season"]),
-    inactive_retained_in_pool: z.boolean(),
+    // Retained players are never auctioned; these are fixed.
+    retention_mode: z.literal("season"),
+    inactive_retained_in_pool: z.literal(false),
     unsold_reround: z.boolean(),
     pool_limit: z.number().int().min(20).max(1000).nullable(),
   })

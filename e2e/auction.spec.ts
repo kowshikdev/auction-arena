@@ -146,7 +146,7 @@ test("four owners run an auction from invite to results", async ({ browser }) =>
   await host.getByRole("button", { name: "Pause", exact: true }).click();
   for (const page of owners) await expect(page.getByText("Paused").first()).toBeVisible();
   await host.getByRole("button", { name: "Resume auction" }).click();
-  for (const page of owners) await expect(page.getByText(/Live auction/).first()).toBeVisible();
+  for (const page of owners) await expect(page.getByText("Live", { exact: true }).first()).toBeVisible();
 
   // ---- A non-host has no host controls
   await expect(second.getByRole("button", { name: "End auction" })).toHaveCount(0);
