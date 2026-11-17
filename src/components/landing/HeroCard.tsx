@@ -30,7 +30,7 @@ export function HeroCard({ featured }: { featured: Featured }) {
       <div className="panel overflow-hidden" style={teamStyle(player.team)}>
         <div className="flex items-center justify-between border-b border-line px-5 py-3">
           <span className="eyebrow flex items-center gap-2 text-[#ff8f9b]"><LiveDot /> {featured.season}</span>
-          <span className="eyebrow">{player.retained ? `Retained · ${player.team}` : "In the auction"}</span>
+          <span className="eyebrow">Up for auction</span>
         </div>
 
         <div key={player.id} className="grid gap-5 p-5 sm:grid-cols-[auto_1fr]">
@@ -45,7 +45,7 @@ export function HeroCard({ featured }: { featured: Featured }) {
               </div>
               {team && (
                 <div className="text-right">
-                  <p className="eyebrow mb-1">{player.retained ? "Retained by" : "Last team"}</p>
+                  <p className="eyebrow mb-1">Last team</p>
                   <FranchiseLogo id={team.id} size={44} />
                 </div>
               )}
