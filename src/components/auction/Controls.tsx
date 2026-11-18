@@ -71,6 +71,19 @@ export function Controls({ snapshot }: { snapshot: RoomSnapshot }) {
           </>
         )}
 
+        {me.is_host && !paused && (
+          <>
+            <Button variant="outline" busy={pending === "hskip"} onClick={() => run("hskip", "/api/auctions/skip", {})}>
+              {bidding ? "Skip player" : "Next player now"}
+            </Button>
+            {bidding && hasBid && (
+              <Button variant="outline" busy={pending === "hsell"} onClick={() => run("hsell", "/api/auctions/skip", { sell: true })}>
+                Sell now
+              </Button>
+            )}
+          </>
+        )}
+
         {paused ? (
           <Button variant="go" busy={pending === "resume"} onClick={() => run("resume", "/api/auctions/resume")}>
             Resume auction
