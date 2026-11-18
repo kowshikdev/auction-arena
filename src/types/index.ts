@@ -43,6 +43,9 @@ export type RoomSettings = {
   unsold_reround: boolean;
   pool_limit: number | null;
   allow_late_join: boolean;
+  ai_difficulty: "easy" | "normal" | "hard";
+  ai_autofill_sec: number | null;
+  ai_autofill_at: string | null;
 };
 
 export type Member = {
@@ -50,6 +53,8 @@ export type Member = {
   display_name: string;
   avatar_url: string | null;
   is_guest: boolean;
+  is_bot?: boolean;
+  bot_persona?: string | null;
   franchise_id: FranchiseId | null;
   is_ready: boolean;
   joined_at: string;
@@ -67,6 +72,7 @@ export type SessionState = {
   bid_count: number;
   bid_deadline: string | null;
   next_at: string | null;
+  next_bot_at?: string | null;
   paused_remaining_ms: number | null;
   lots_total: number;
   lots_done: number;
@@ -85,6 +91,7 @@ export type Team = {
   squad_count: number;
   overseas_count: number;
   bids_placed: number;
+  ai_strategy?: string | null;
 };
 
 export type Lot = {
@@ -184,6 +191,7 @@ export type Player = {
   retention_price_lakh: number | null;
   last_price_lakh: number | null;
   is_available: boolean;
+  scout?: { overall: number; batting: number | null; bowling: number | null; form: number; tags: string[] } | null;
 };
 
 export type Profile = {

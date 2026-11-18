@@ -76,6 +76,13 @@ function applyEvent(snapshot: RoomSnapshot, event: RoomEvent): RoomSnapshot {
  * applies broadcast events in sequence order, and reloads the snapshot whenever it sees a
  * gap, reconnects, or the tab wakes up. Nothing here decides auction outcomes.
  */
+/** The sooner of two ISO times, ignoring empty ones. */
+function earliest(a?: string | null, b?: string | null) {
+  if (!a) return b ?? null;
+  if (!b) return a;
+  return new Date(a) <= new Date(b) ? a : b;
+}
+
 export function useRoom(code: string) {
   const [snapshot, setSnapshot] = useState<RoomSnapshot | null>(null);
   const [error, setError] = useState<ApiError | null>(null);
@@ -196,7 +203,9 @@ export function useRoom(code: string) {
   // Ask the server to check its clock when the deadline we were told about has passed.
   const session = snapshot?.session;
   const target = session?.status === "live"
-    ? session.phase === "bidding" ? session.bid_deadline : session.next_at
+    ? session.phase === "bidding"
+      ? earliest(session.bid_deadline, session.next_bot_at)
+      : session.next_at
     : null;
   useEffect(() => {
     if (!roomId || !target) return;
@@ -207,7 +216,7 @@ export function useRoom(code: string) {
         const result = await api<{ acted: boolean }>("/api/auctions/tick", { room_id: roomId });
         if (stopped) return;
         // Not closed yet (our clock ran slightly ahead, or the request failed): ask again shortly.
-        const unchanged = snapshotRef.current?.session?.bid_deadline === target || snapshotRef.current?.session?.next_at === target;
+        const unchanged = snapshotRef.current?.session?.bid_deadline === target || snapshotRef.current?.session?.next_bot_at === target || snapshotRef.current?.session?.next_bot_at === target || snapshotRef.current?.session?.next_at === target;
         if ((!result.ok || !result.acted) && unchanged) schedule(700);
       }, delay);
     };

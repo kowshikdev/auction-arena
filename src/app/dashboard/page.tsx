@@ -8,6 +8,7 @@ import { formatMoney } from "@/lib/money";
 import { useAuth } from "@/hooks/useAuth";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { CreateRoomModal } from "@/components/dashboard/CreateRoomModal";
+import { SoloModal } from "@/components/dashboard/SoloModal";
 import { JoinBox } from "@/components/dashboard/JoinBox";
 import { AuthGate } from "@/components/shared/AuthGate";
 import { FranchiseLogo } from "@/components/shared/identity";
@@ -46,6 +47,7 @@ function Dashboard() {
   const toast = useToast();
   const { profile } = useAuth();
 
+  const [soloOpen, setSoloOpen] = useState(false);
   const [createOpen, setCreateOpen] = useState(params.get("create") === "1");
   const [rooms, setRooms] = useState<PublicRoom[] | null>(null);
   const [mine, setMine] = useState<MyAuction[] | null>(null);
@@ -115,7 +117,12 @@ function Dashboard() {
         </div>
 
         {/* Primary actions */}
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <Panel className="team-wash p-6">
+            <div className="flex items-center gap-2"><h2 className="display text-3xl">Play vs AI</h2><Badge tone="gold">New</Badge></div>
+            <p className="mt-1 text-sm text-mute">No waiting. AI franchise owners bid against you right now.</p>
+            <Button variant="gold" size="lg" className="mt-5 w-full shine" onClick={() => setSoloOpen(true)}>Start vs AI</Button>
+          </Panel>
           <Panel className="team-wash p-6">
             <h2 className="display text-3xl">Create auction</h2>
             <p className="mt-1 text-sm text-mute">Private or public room, your rules, your auctioneer.</p>
@@ -238,6 +245,7 @@ function Dashboard() {
       </main>
 
       <CreateRoomModal open={createOpen} onClose={() => setCreateOpen(false)} />
+      <SoloModal open={soloOpen} onClose={() => setSoloOpen(false)} />
     </div>
   );
 }

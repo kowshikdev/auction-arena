@@ -1,0 +1,144 @@
+import { beforeAll, describe, expect, it } from "vitest";
+import { cleanup, rpc, rpcCode, sleep, testUser, type TestUser } from "./helpers";
+
+let users: TestUser[];
+
+beforeAll(async () => {
+  users = [await testUser(6), await testUser(7)];
+});
+
+async function state(user: TestUser, code: string) {
+  return rpc(user, "get_room_state", { p_code: code });
+}
+
+describe("AI owners", () => {
+  it("starts a solo room at once with a human and AI franchises", async () => {
+    const [me] = users;
+    const solo = await rpc(me, "create_solo_room", { p_franchise: "MI", p_ai_count: 5, p_difficulty: "hard", p_timer_sec: 5, p_pool_limit: 20 });
+    const s = await state(me, solo.code);
+    expect(s.room.status).toBe("live");
+    expect(s.teams).toHaveLength(6);
+    const bots = s.members.filter((m: any) => m.is_bot);
+    expect(bots).toHaveLength(5);
+    expect(s.members.find((m: any) => m.user_id === me.id).franchise_id).toBe("MI");
+    expect(s.settings.ai_difficulty).toBe("hard");
+    await cleanup(me, solo.room_id);
+  });
+
+  it("rejects invalid solo options", async () => {
+    const [me] = users;
+    expect(await rpcCode(me, "create_solo_room", { p_ai_count: 1 })).toBe("INVALID_SETTINGS");
+    expect(await rpcCode(me, "create_solo_room", { p_difficulty: "godlike" })).toBe("INVALID_SETTINGS");
+  });
+
+  it("lets AI bid within purse and squad rules while a human passes", async () => {
+    const [me] = users;
+    const solo = await rpc(me, "create_solo_room", { p_franchise: "CSK", p_ai_count: 9, p_difficulty: "normal", p_timer_sec: 5, p_pool_limit: 20 });
+    const deadline = Date.now() + 100_000;
+    let sold = 0;
+    let botBids = 0;
+    while (Date.now() < deadline) {
+      await rpc(me, "tick", { p_room_id: solo.room_id });
+      const s = await state(me, solo.code);
+      const session = s.session;
+      if (session.phase === "bidding" && session.current_lot_id) {
+        await rpcCode(me, "pass_lot", { p_room_id: solo.room_id, p_lot_id: session.current_lot_id });
+      }
+      sold = s.lots.filter((l: any) => l.status === "sold").length;
+      botBids = s.teams.reduce((sum: number, t: any) => sum + t.bids_placed, 0);
+      if (sold >= 1 || session.phase === "done") break;
+      await sleep(600);
+    }
+    const s = await state(me, solo.code);
+    expect(botBids).toBeGreaterThan(0);
+    expect(sold).toBeGreaterThan(0);
+    for (const t of s.teams) {
+      expect(t.purse_remaining_lakh).toBeGreaterThanOrEqual(0);
+      expect(t.squad_count).toBeLessThanOrEqual(s.settings.squad_max);
+      expect(t.overseas_count).toBeLessThanOrEqual(s.settings.overseas_max);
+    }
+    // Nobody can double-hold a player.
+    const players = s.squads.map((q: any) => q.player_id);
+    expect(new Set(players).size).toBe(players.length);
+    await cleanup(me, solo.room_id);
+  }, 130_000);
+
+  it("fills empty seats for the host only and blocks outsiders", async () => {
+    const [host, other] = users;
+    const created = await rpc(host, "create_room", { p_name: "Fill test", p_visibility: "private" });
+    await rpc(other, "join_room", { p_code: created.code });
+    expect(await rpcCode(other, "fill_with_ai", { p_room_id: created.room_id })).toBe("NOT_HOST");
+    expect(await rpcCode(other, "add_ai_owner", { p_room_id: created.room_id })).toBe("NOT_HOST");
+    const one = await rpc(host, "add_ai_owner", { p_room_id: created.room_id, p_franchise: "RCB", p_persona: "star" });
+    expect(one.franchise_id).toBe("RCB");
+    expect(await rpcCode(host, "add_ai_owner", { p_room_id: created.room_id, p_franchise: "RCB" })).toBe("FRANCHISE_TAKEN");
+    await rpc(host, "fill_with_ai", { p_room_id: created.room_id });
+    const s = await state(host, created.code);
+    expect(s.members).toHaveLength(10);
+    // Humans still need a franchise before the host can start.
+    expect(await rpcCode(host, "start_auction", { p_room_id: created.room_id })).toBe("MEMBER_WITHOUT_FRANCHISE");
+    await rpc(other, "leave_room", { p_room_id: created.room_id });
+    await rpc(host, "leave_room", { p_room_id: created.room_id });
+  });
+
+  it("auto-fills a lobby after its timer and starts the auction", async () => {
+    const [host] = users;
+    const created = await rpc(host, "create_room", { p_name: "Autofill", p_visibility: "private", p_settings: { pool_limit: 20 } });
+    await rpc(host, "set_ai_options", { p_room_id: created.room_id, p_autofill_sec: 15 });
+    const deadline = Date.now() + 45_000;
+    let live = false;
+    while (Date.now() < deadline) {
+      await sleep(3000);
+      const s = await state(host, created.code);
+      if (s.room.status === "live") { live = true; break; }
+    }
+    expect(live).toBe(true);
+    const s = await state(host, created.code);
+    expect(s.teams.length).toBe(10);
+    await cleanup(host, created.room_id);
+  }, 60_000);
+});
+
+describe("scouting ratings", () => {
+  it("rates the pool from real data, in range, with stars above the rest", async () => {
+    const [me] = users;
+    const { data, error } = await me.client.from("player_ratings").select("overall, form, source").limit(2000);
+    expect(error).toBeNull();
+    expect(data!.length).toBeGreaterThan(400);
+    for (const r of data!) {
+      expect(r.overall).toBeGreaterThanOrEqual(0);
+      expect(r.overall).toBeLessThanOrEqual(100);
+      expect(r.form).toBeGreaterThanOrEqual(0);
+      expect(r.form).toBeLessThanOrEqual(100);
+    }
+    const scouted = data!.filter((r) => r.source === "cricsheet");
+    expect(scouted.length).toBeGreaterThan(250);
+    const top = Math.max(...data!.map((r) => r.overall));
+    expect(top).toBeGreaterThanOrEqual(85);
+  });
+});
+
+describe("AI strategy and news", () => {
+  it("stores strategies for bot teams once, hides targets, and rejects non-members and non-admins", async () => {
+    const [me, outsider] = users;
+    const solo = await rpc(me, "create_solo_room", { p_franchise: "MI", p_ai_count: 3, p_timer_sec: 5, p_pool_limit: 20 });
+    const s = await state(me, solo.code);
+    const bot = s.teams.find((t: any) => t.franchise_id !== "MI");
+    const human = s.teams.find((t: any) => t.franchise_id === "MI");
+    const target = s.lots[0].player_id;
+    const items = [
+      { franchise_id: bot.franchise_id, strategy: "Chase pace.", targets: [target], line: "Ready." },
+      { franchise_id: human.franchise_id, strategy: "Should be ignored", targets: [], line: "" },
+    ];
+    expect((await rpc(me, "save_ai_strategy", { p_room_id: solo.room_id, p_items: items })).saved).toBe(1);
+    expect((await rpc(me, "save_ai_strategy", { p_room_id: solo.room_id, p_items: items })).saved).toBe(0);
+    const after = await state(me, solo.code);
+    expect(after.teams.find((t: any) => t.franchise_id === bot.franchise_id).ai_strategy).toBe("Chase pace.");
+    expect(after.teams.find((t: any) => t.franchise_id === "MI").ai_strategy).toBeNull();
+    expect(JSON.stringify(after)).not.toContain("player_ids");
+    expect(after.chat.some((c: any) => c.body === "Ready.")).toBe(true);
+    expect(await rpcCode(outsider, "save_ai_strategy", { p_room_id: solo.room_id, p_items: items })).toBe("NOT_MEMBER");
+    expect(await rpcCode(me, "admin_save_player_news", { p_rows: [] })).toBe("NOT_ADMIN");
+    await cleanup(me, solo.room_id);
+  });
+});

@@ -133,7 +133,9 @@ export default async function LandingPage() {
         <div className="mx-auto max-w-7xl px-4 py-8 text-xs leading-relaxed text-dim sm:px-6">
           AuctionArena is an independent fan-made mock auction for entertainment. It is not affiliated with, endorsed by or
           connected to the IPL, the BCCI or any franchise. Team names and logos belong to their respective owners. No real
-          money is involved.
+          money is involved. Player scouting ratings are derived from ball-by-ball data by{" "}
+          <a href="https://cricsheet.org" className="underline" target="_blank" rel="noreferrer">Cricsheet</a>{" "}
+          (CC BY-SA 2.0).
         </div>
       </footer>
     </div>
