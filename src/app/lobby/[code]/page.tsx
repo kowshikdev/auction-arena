@@ -20,6 +20,12 @@ import { useSeasonTeams, type SeasonTeam } from "@/hooks/useSeasonTeams";
 import { MicTest, VoiceDock } from "@/components/voice/VoiceDock";
 import type { FranchiseId, Member, RoomSnapshot } from "@/types";
 
+/** Human wording for a countdown to an ISO time. */
+function autofillIn(at: string, now: number) {
+  const secs = Math.max(0, Math.round((new Date(at).getTime() - now) / 1000));
+  return secs <= 0 ? "any moment now" : `in ${secs}s`;
+}
+
 function CopyButton({ value, label }: { value: string; label: string }) {
   const [copied, setCopied] = useState(false);
   return (
@@ -61,6 +67,7 @@ function Lobby() {
   const voice = useVoice(code);
   const snapshot = room.snapshot;
   const now = useNow();
+  const clock = useNow(1000);
   const seasonTeams = useSeasonTeams(snapshot?.room.season_id);
 
   const [pending, setPending] = useState<string | null>(null);
@@ -214,7 +221,7 @@ function Lobby() {
                 >
                   <TeamBanner id={team.id} logoSize={72} dimmed={!owner} className={cn("aspect-[3/2] w-full", !owner && "opacity-80 group-hover:opacity-100")}>
                     {mine && <Badge tone="gold" className="absolute left-2 top-2 bg-ink/80">You</Badge>}
-                    {owner?.is_ready && <Badge tone="go" className="absolute right-2 top-2 bg-ink/80">Ready</Badge>}
+                    {owner?.is_bot ? <Badge tone="gold" className="absolute right-2 top-2 bg-ink/80">AI</Badge> : owner?.is_ready && <Badge tone="go" className="absolute right-2 top-2 bg-ink/80">Ready</Badge>}
                   </TeamBanner>
                   <div className="p-3">
                     <p className="display truncate text-lg leading-tight">{team.name}</p>
@@ -224,7 +231,7 @@ function Lobby() {
                       </p>
                     )}
                     {owner ? (
-                      <div className="mt-2 flex items-center gap-2">
+                      <div className="mt-2 flex items-center gap-2" title={owner.is_bot ? `AI owner · ${owner.bot_persona ?? ""}` : undefined}>
                         <Avatar name={owner.display_name} src={owner.avatar_url} size={22} />
                         <span className="truncate text-xs font-semibold">{owner.display_name}</span>
                         <span className={cn("ml-auto size-2 shrink-0 rounded-full", isOnline(owner) ? "bg-go" : "bg-dim")} title={isOnline(owner) ? "Online" : "Offline"} />
@@ -274,6 +281,14 @@ function Lobby() {
                 {meReady ? "Not ready" : canReady ? "I am ready" : "Pick a franchise first"}
               </Button>
             )}
+            {me.is_host && derived.owners.length < info.max_participants && (
+              <Button variant="outline" size="lg" className="mt-3 w-full" busy={pending === "fill"} onClick={() => act("fill", "/api/rooms/ai", { action: "fill", room_id: roomId }, "AI owners seated")}>
+                Fill empty seats with AI
+              </Button>
+            )}
+            {settings.ai_autofill_at && (
+              <p className="mt-3 text-center text-xs text-gold">AI owners join and the auction starts {autofillIn(settings.ai_autofill_at, clock)}.</p>
+            )}
             {me.is_host ? (
               <Button variant="gold" size="lg" className="mt-5 w-full shine" disabled={!derived.canStart} busy={pending === "start"} onClick={start}>
                 Start auction
@@ -306,6 +321,7 @@ function Lobby() {
                     <p className="flex flex-wrap items-center gap-1 text-[11px] text-dim">
                       {member.user_id === info.host_id && <span className="text-gold">Host</span>}
                       {member.user_id === derived.humanAuctioneer && <span className="text-gold">Auctioneer</span>}
+                      {member.is_bot && <span className="text-gold">AI · {member.bot_persona}</span>}
                       {voice.speaking.has(member.user_id) && <span className="text-go">Speaking</span>}
                       {!isOnline(member) && <span>Disconnected</span>}
                       {member.is_ready && <span className="text-go">Ready</span>}
