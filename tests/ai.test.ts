@@ -142,3 +142,25 @@ describe("AI strategy and news", () => {
     await cleanup(me, solo.room_id);
   });
 });
+
+describe("host skip", () => {
+  it("lets the host skip the intro and a player, and blocks others", async () => {
+    const [me, other] = users;
+    const solo = await rpc(me, "create_solo_room", { p_franchise: "KKR", p_ai_count: 3, p_timer_sec: 20, p_pool_limit: 20 });
+    expect(await rpcCode(other, "host_skip_lot", { p_room_id: solo.room_id })).toBe("NOT_HOST");
+    await rpc(me, "host_skip_lot", { p_room_id: solo.room_id }); // intro -> first player now
+    let s = await state(me, solo.code);
+    expect(s.session.phase).toBe("bidding");
+    const firstLot = s.session.current_lot_id;
+    const out = await rpc(me, "host_skip_lot", { p_room_id: solo.room_id }); // pass on the player
+    expect(out.sold).toBe(false);
+    s = await state(me, solo.code);
+    expect(s.session.phase).toBe("result");
+    expect(s.lots.find((l: any) => l.id === firstLot).status).toBe("unsold");
+    await rpc(me, "host_skip_lot", { p_room_id: solo.room_id }); // result pause -> next player now
+    s = await state(me, solo.code);
+    expect(s.session.phase).toBe("bidding");
+    expect(s.session.current_lot_id).not.toBe(firstLot);
+    await cleanup(me, solo.room_id);
+  });
+});
