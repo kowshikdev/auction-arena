@@ -98,3 +98,22 @@ describe("AI owners", () => {
     await cleanup(host, created.room_id);
   }, 60_000);
 });
+
+describe("scouting ratings", () => {
+  it("rates the pool from real data, in range, with stars above the rest", async () => {
+    const [me] = users;
+    const { data, error } = await me.client.from("player_ratings").select("overall, form, source").limit(2000);
+    expect(error).toBeNull();
+    expect(data!.length).toBeGreaterThan(400);
+    for (const r of data!) {
+      expect(r.overall).toBeGreaterThanOrEqual(0);
+      expect(r.overall).toBeLessThanOrEqual(100);
+      expect(r.form).toBeGreaterThanOrEqual(0);
+      expect(r.form).toBeLessThanOrEqual(100);
+    }
+    const scouted = data!.filter((r) => r.source === "cricsheet");
+    expect(scouted.length).toBeGreaterThan(250);
+    const top = Math.max(...data!.map((r) => r.overall));
+    expect(top).toBeGreaterThanOrEqual(85);
+  });
+});

@@ -190,6 +190,7 @@ export type Player = {
   retention_price_lakh: number | null;
   last_price_lakh: number | null;
   is_available: boolean;
+  scout?: { overall: number; batting: number | null; bowling: number | null; form: number; tags: string[] } | null;
 };
 
 export type Profile = {

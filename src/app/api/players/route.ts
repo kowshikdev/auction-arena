@@ -30,6 +30,11 @@ export async function GET(request: Request) {
     return { ...player, ...seasonFields, id: player_id } as unknown as Player;
   });
 
+  // Scouting ratings, attached per player.
+  const ratings = await supabase.from("player_ratings").select("player_id, overall, batting, bowling, form, tags").limit(2000);
+  const scout = new Map((ratings.data ?? []).map((r) => [r.player_id as string, r]));
+  players = players.map((p) => ({ ...p, scout: scout.get(p.id) ?? null }));
+
   const q = params.get("q")?.trim().toLowerCase();
   const role = params.get("role");
   const team = params.get("team");

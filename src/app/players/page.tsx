@@ -151,6 +151,13 @@ export default function PlayersPage() {
                 ["Status", open.is_retained ? "Retained" : open.is_available ? "Available" : "Not in auction"],
                 ["Batting", open.batting_style ?? "Not recorded"],
                 ["Bowling", open.bowling_style ?? "Not recorded"],
+                ...(open.scout
+                  ? ([
+                      ["Scout rating", `${open.scout.overall} / 100`],
+                      ["Current form", `${open.scout.form} / 100`],
+                      ["Scout tags", open.scout.tags.join(", ") || "None"],
+                    ] as [string, string][])
+                  : []),
                 ...Object.entries(open.stats ?? {}).map(([k, v]) => [k, String(v)] as [string, string]),
               ] as [string, string][]).map(([label, value]) => (
                 <div key={label} className="rounded-xl border border-line bg-black/25 px-3 py-2">
