@@ -117,3 +117,28 @@ describe("scouting ratings", () => {
     expect(top).toBeGreaterThanOrEqual(85);
   });
 });
+
+describe("AI strategy and news", () => {
+  it("stores strategies for bot teams once, hides targets, and rejects non-members and non-admins", async () => {
+    const [me, outsider] = users;
+    const solo = await rpc(me, "create_solo_room", { p_franchise: "MI", p_ai_count: 3, p_timer_sec: 5, p_pool_limit: 20 });
+    const s = await state(me, solo.code);
+    const bot = s.teams.find((t: any) => t.franchise_id !== "MI");
+    const human = s.teams.find((t: any) => t.franchise_id === "MI");
+    const target = s.lots[0].player_id;
+    const items = [
+      { franchise_id: bot.franchise_id, strategy: "Chase pace.", targets: [target], line: "Ready." },
+      { franchise_id: human.franchise_id, strategy: "Should be ignored", targets: [], line: "" },
+    ];
+    expect((await rpc(me, "save_ai_strategy", { p_room_id: solo.room_id, p_items: items })).saved).toBe(1);
+    expect((await rpc(me, "save_ai_strategy", { p_room_id: solo.room_id, p_items: items })).saved).toBe(0);
+    const after = await state(me, solo.code);
+    expect(after.teams.find((t: any) => t.franchise_id === bot.franchise_id).ai_strategy).toBe("Chase pace.");
+    expect(after.teams.find((t: any) => t.franchise_id === "MI").ai_strategy).toBeNull();
+    expect(JSON.stringify(after)).not.toContain("player_ids");
+    expect(after.chat.some((c: any) => c.body === "Ready.")).toBe(true);
+    expect(await rpcCode(outsider, "save_ai_strategy", { p_room_id: solo.room_id, p_items: items })).toBe("NOT_MEMBER");
+    expect(await rpcCode(me, "admin_save_player_news", { p_rows: [] })).toBe("NOT_ADMIN");
+    await cleanup(me, solo.room_id);
+  });
+});

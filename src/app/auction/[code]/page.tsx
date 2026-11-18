@@ -101,6 +101,19 @@ function AuctionRoom() {
     return () => window.removeEventListener("keydown", onKey);
   }, [bid]);
 
+  // Once per auction the host's browser asks the server to write the AI owners' strategies.
+  const strategyAsked = useRef(false);
+  const needsStrategy = Boolean(
+    snapshot?.me.is_host &&
+      snapshot.session &&
+      snapshot.teams.some((t) => !t.ai_strategy && snapshot.members.find((m) => m.user_id === t.user_id)?.is_bot),
+  );
+  useEffect(() => {
+    if (!needsStrategy || strategyAsked.current) return;
+    strategyAsked.current = true;
+    void api("/api/ai/strategy", { code });
+  }, [needsStrategy, code]);
+
   if (room.loading || !snapshot) {
     return (
       <div className="stadium grid min-h-dvh place-items-center">
@@ -208,6 +221,7 @@ function AuctionRoom() {
             players={players}
             settings={settings}
             ownerName={members.find((m) => m.user_id === openTeam.user_id)?.display_name}
+            strategy={openTeam.ai_strategy}
           />
         )}
       </Modal>

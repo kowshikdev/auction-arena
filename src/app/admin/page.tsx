@@ -115,6 +115,7 @@ function Admin() {
 
 function OverviewTab({ overview, reload }: { overview: Overview | null; reload: () => Promise<void> }) {
   const toast = useToast();
+  const [scouting, setScouting] = useState(false);
   if (!overview) return <div className="grid place-items-center py-16"><Spinner className="size-7 text-gold" /></div>;
   const groups: { title: string; items: [string, string][] }[] = [
     { title: "Right now", items: [["online_now", "People online"], ["rooms_live", "Auctions running"], ["rooms_waiting", "Rooms in lobby"]] },
@@ -123,6 +124,14 @@ function OverviewTab({ overview, reload }: { overview: Overview | null; reload: 
     { title: "All time", items: [["users", "Accounts"], ["guests", "Guests"], ["auctions_completed", "Auctions finished"], ["players", "Players in catalogue"], ["reports_open", "Open reports"]] },
   ];
   const peak = Math.max(1, ...overview.daily.map((d) => d.rooms));
+
+  async function scout() {
+    setScouting(true);
+    const result = await api<{ scouted: number; failed: number; searches: number }>("/api/admin/scout", { limit: 30 });
+    setScouting(false);
+    if (!result.ok) return toast(result.error.message, "error");
+    toast(`Scouted ${result.scouted} players (${result.searches} searches, ${result.failed} failed)`, "success");
+  }
 
   async function post(path: string, body: Record<string, unknown>, done: string) {
     const result = await api(path, body);
@@ -196,6 +205,14 @@ function OverviewTab({ overview, reload }: { overview: Overview | null; reload: 
             </table>
           </div>
         )}
+      </Panel>
+
+      <Panel className="flex flex-wrap items-center justify-between gap-3 p-5">
+        <div>
+          <h2 className="display text-3xl">AI scouting</h2>
+          <p className="text-sm text-mute">Searches the web for injuries and form on the top 30 players and feeds the AI owners.</p>
+        </div>
+        <Button variant="gold" busy={scouting} onClick={scout}>Refresh scouting news</Button>
       </Panel>
 
       <Panel className="p-5">

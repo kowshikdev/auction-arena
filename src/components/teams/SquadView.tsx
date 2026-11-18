@@ -15,12 +15,14 @@ export function SquadView({
   players,
   settings,
   ownerName,
+  strategy,
 }: {
   team: Team;
   squad: SquadEntry[];
   players: Map<string, Player>;
   settings: RoomSettings;
   ownerName?: string;
+  strategy?: string | null;
 }) {
   const info = franchise(team.franchise_id);
   const rows = squad
@@ -49,6 +51,7 @@ export function SquadView({
         <div>
           <h3 className="display text-3xl">{info?.name}</h3>
           {ownerName && <p className="text-sm text-mute">Owner: {ownerName}</p>}
+          {strategy && <p className="mt-1 max-w-xl text-sm text-gold">AI strategy: {strategy}</p>}
         </div>
         {unfilled > 0 && <Badge tone="warn">{unfilled} below minimum squad</Badge>}
       </div>

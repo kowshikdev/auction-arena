@@ -91,6 +91,7 @@ export type Team = {
   squad_count: number;
   overseas_count: number;
   bids_placed: number;
+  ai_strategy?: string | null;
 };
 
 export type Lot = {
